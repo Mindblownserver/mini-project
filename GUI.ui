@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ProjectCorna</class>
+ <widget class="QMainWindow" name="ProjectCorna">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>605</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Project Corona</string>
+  </property>
+  <widget class="QWidget" name="centralwidget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuMise_jour">
+    <property name="title">
+     <string>Gestion des personnes</string>
+    </property>
+    <widget class="QMenu" name="menuMise_jour_des_personnes">
+     <property name="title">
+      <string>Mise à jour des personnes</string>
+     </property>
+     <widget class="QMenu" name="menuSupprimer_personne">
+      <property name="title">
+       <string>Supprimer personne</string>
+      </property>
+      <addaction name="actionSuppression_personne_donn"/>
+      <addaction name="actionSuppression_des_personnes_d_une_nationalit_donn"/>
+      <addaction name="actionSuppression_des_personnes_d_un_indicatif_donn"/>
+     </widget>
+     <widget class="QMenu" name="menuModifier_personne">
+      <property name="title">
+       <string>Modifier personne</string>
+      </property>
+      <addaction name="actionT_l_phone"/>
+      <addaction name="actionAdresse"/>
+     </widget>
+     <addaction name="actionAjouter_personne_2"/>
+     <addaction name="menuSupprimer_personne"/>
+     <addaction name="menuModifier_personne"/>
+    </widget>
+    <widget class="QMenu" name="menuRecherche_affichage">
+     <property name="title">
+      <string>Recherche et affichage</string>
+     </property>
+     <addaction name="actionContenu_du_dictionnaire_personne"/>
+     <addaction name="actionRecherche_par_num_ro_t_l_phone"/>
+     <addaction name="actionRecherche_par_indicatif"/>
+     <addaction name="actionRecherche_par_nationalit"/>
+     <addaction name="actionRecherche_par_personnes_d_c_d_s"/>
+     <addaction name="actionRecherche_par_des_personnes_non_d_c_d_s"/>
+    </widget>
+    <addaction name="menuMise_jour_des_personnes"/>
+    <addaction name="menuRecherche_affichage"/>
+   </widget>
+   <widget class="QMenu" name="menuGestion_des_maladies">
+    <property name="title">
+     <string>Gestion des maladies</string>
+    </property>
+    <widget class="QMenu" name="menuMise_jour_2">
+     <property name="title">
+      <string>Mise à jour</string>
+     </property>
+     <widget class="QMenu" name="menuModifier_les_donn_es_d_une_maladie">
+      <property name="title">
+       <string>Modifier les données d'une maladie</string>
+      </property>
+      <addaction name="actionNombre_d_ann_es"/>
+      <addaction name="actionModifer_d_c_s"/>
+     </widget>
+     <addaction name="actionAjouter_une_nouvelle_maladie"/>
+     <addaction name="actionSupprimer_une_maladie"/>
+     <addaction name="menuModifier_les_donn_es_d_une_maladie"/>
+    </widget>
+    <widget class="QMenu" name="menuRecherche_affichage_2">
+     <property name="title">
+      <string>Recherche et affichage</string>
+     </property>
+     <addaction name="actionContenu_du_dictionnaire_maladie"/>
+     <addaction name="actionRecherche_par_une_maladie"/>
+     <addaction name="actionRecherche_maladies_d_une_personne"/>
+     <addaction name="actionRecherche_le_pourcentage_de_chaque_maladie"/>
+     <addaction name="actionRecherche_maladies_de_chaque_personne"/>
+    </widget>
+    <addaction name="menuMise_jour_2"/>
+    <addaction name="menuRecherche_affichage_2"/>
+   </widget>
+   <widget class="QMenu" name="menuCalcul_et_affichage">
+    <property name="title">
+     <string>Calcul et affichage</string>
+    </property>
+    <addaction name="actionAfficher_par_nationalit"/>
+    <addaction name="actionPersonnes_en_quarantaine"/>
+    <addaction name="actionPersonnes_d_c_d_s"/>
+    <addaction name="actionPersonnes_risque"/>
+   </widget>
+   <widget class="QMenu" name="menuEnregistrement_et_r_cup_ration">
+    <property name="title">
+     <string>Enregistrement et récupération</string>
+    </property>
+    <addaction name="actionEnregistrement_fichier_personnes"/>
+    <addaction name="actionR_cup_ration_fichier_personnes"/>
+    <addaction name="actionEnregistrement_fichier_maladies"/>
+    <addaction name="actionR_cup_ration_fichier_maladies"/>
+   </widget>
+   <addaction name="menuMise_jour"/>
+   <addaction name="menuGestion_des_maladies"/>
+   <addaction name="menuCalcul_et_affichage"/>
+   <addaction name="menuEnregistrement_et_r_cup_ration"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionAjouter_personne_2">
+   <property name="text">
+    <string>Ajouter personne</string>
+   </property>
+  </action>
+  <action name="actionSuppression_personne_donn">
+   <property name="text">
+    <string>Suppression personne donné</string>
+   </property>
+  </action>
+  <action name="actionSuppression_des_personnes_d_une_nationalit_donn">
+   <property name="text">
+    <string>Suppression des personnes d'une nationalité donné</string>
+   </property>
+  </action>
+  <action name="actionSuppression_des_personnes_d_un_indicatif_donn">
+   <property name="text">
+    <string>Suppression des personnes d'un indicatif donné</string>
+   </property>
+  </action>
+  <action name="actionT_l_phone">
+   <property name="text">
+    <string>Téléphone</string>
+   </property>
+  </action>
+  <action name="actionAdresse">
+   <property name="text">
+    <string>Adresse</string>
+   </property>
+  </action>
+  <action name="actionContenu_du_dictionnaire_personne">
+   <property name="text">
+    <string>Contenu du dictionnaire personne</string>
+   </property>
+  </action>
+  <action name="actionRecherche_par_num_ro_t_l_phone">
+   <property name="text">
+    <string>Recherche par numéro téléphone</string>
+   </property>
+  </action>
+  <action name="actionRecherche_par_indicatif">
+   <property name="text">
+    <string>Recherche par indicatif</string>
+   </property>
+  </action>
+  <action name="actionRecherche_par_nationalit">
+   <property name="text">
+    <string>Recherche par nationalité</string>
+   </property>
+  </action>
+  <action name="actionRecherche_par_personnes_d_c_d_s">
+   <property name="text">
+    <string>Recherche par personnes décédés</string>
+   </property>
+  </action>
+  <action name="actionRecherche_par_des_personnes_non_d_c_d_s">
+   <property name="text">
+    <string>Recherche par des personnes non décédés</string>
+   </property>
+  </action>
+  <action name="actionAjouter_une_nouvelle_maladie">
+   <property name="text">
+    <string>Ajouter une nouvelle maladie</string>
+   </property>
+  </action>
+  <action name="actionSupprimer_une_maladie">
+   <property name="text">
+    <string>Supprimer une maladie</string>
+   </property>
+  </action>
+  <action name="actionNombre_d_ann_es">
+   <property name="text">
+    <string>Nombre d'années</string>
+   </property>
+  </action>
+  <action name="actionModifer_d_c_s">
+   <property name="text">
+    <string>Modifer décès</string>
+   </property>
+  </action>
+  <action name="actionContenu_du_dictionnaire_maladie">
+   <property name="text">
+    <string>Contenu du dictionnaire maladie</string>
+   </property>
+  </action>
+  <action name="actionRecherche_par_une_maladie">
+   <property name="text">
+    <string>Recherche par une maladie</string>
+   </property>
+  </action>
+  <action name="actionRecherche_maladies_d_une_personne">
+   <property name="text">
+    <string>Recherche maladies d'une personne</string>
+   </property>
+  </action>
+  <action name="actionRecherche_le_pourcentage_de_chaque_maladie">
+   <property name="text">
+    <string>Recherche le pourcentage de chaque maladie</string>
+   </property>
+  </action>
+  <action name="actionRecherche_maladies_de_chaque_personne">
+   <property name="text">
+    <string>Recherche maladies de chaque personne</string>
+   </property>
+  </action>
+  <action name="actionAfficher_par_nationalit">
+   <property name="text">
+    <string>Afficher par nationalité</string>
+   </property>
+  </action>
+  <action name="actionPersonnes_en_quarantaine">
+   <property name="text">
+    <string>Personnes en quarantaine</string>
+   </property>
+  </action>
+  <action name="actionPersonnes_d_c_d_s">
+   <property name="text">
+    <string>Personnes décédés</string>
+   </property>
+  </action>
+  <action name="actionPersonnes_risque">
+   <property name="text">
+    <string>Personnes à risque</string>
+   </property>
+  </action>
+  <action name="actionEnregistrement_fichier_personnes">
+   <property name="text">
+    <string>Enregistrement fichier personnes</string>
+   </property>
+  </action>
+  <action name="actionR_cup_ration_fichier_personnes">
+   <property name="text">
+    <string>Récupération fichier personnes</string>
+   </property>
+  </action>
+  <action name="actionEnregistrement_fichier_maladies">
+   <property name="text">
+    <string>Enregistrement fichier maladies</string>
+   </property>
+  </action>
+  <action name="actionR_cup_ration_fichier_maladies">
+   <property name="text">
+    <string>Récupération fichier maladies</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
