@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>returnOff.svg</file>
+    <file>returnOn.svg</file>
+    <file>arrow-left-solid.svg</file>
+  </qresource>
+</RCC>

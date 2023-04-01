@@ -20,7 +20,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>27</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMise_jour">
@@ -54,7 +54,7 @@
      <property name="title">
       <string>Recherche et affichage</string>
      </property>
-     <addaction name="actionContenu_du_dictionnaire_personne"/>
+     <addaction name="actionAfficher"/>
      <addaction name="actionRecherche_par_num_ro_t_l_phone"/>
      <addaction name="actionRecherche_par_indicatif"/>
      <addaction name="actionRecherche_par_nationalit"/>
@@ -150,7 +150,7 @@
     <string>Adresse</string>
    </property>
   </action>
-  <action name="actionContenu_du_dictionnaire_personne">
+  <action name="actionAfficher">
    <property name="text">
     <string>Contenu du dictionnaire personne</string>
    </property>

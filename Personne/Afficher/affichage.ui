@@ -21,6 +21,54 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QFrame" name="frame_2">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>50</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>12</y>
+         <width>51</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../../assets/icons/AfficherTout.qrc">
+         <normaloff>../../assets/icons/returnOff.svg</normaloff>
+         <normalon>../../assets/icons/returnOn.svg</normalon>
+         <selectedoff>../../assets/icons/returnOff.svg</selectedoff>
+         <selectedon>../../assets/icons/returnOn.svg</selectedon>../../assets/icons/returnOff.svg</iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>64</width>
+         <height>64</height>
+        </size>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+    </item>
     <item alignment="Qt::AlignTop">
      <widget class="QFrame" name="critere">
       <property name="minimumSize">
@@ -148,7 +196,7 @@
      <x>0</x>
      <y>0</y>
      <width>1024</width>
-     <height>27</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
@@ -157,6 +205,8 @@
  <tabstops>
   <tabstop>table</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../../assets/qtResources/AfficherTout.qrc"/>
+ </resources>
  <connections/>
 </ui>
