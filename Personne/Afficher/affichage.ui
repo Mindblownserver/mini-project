@@ -51,7 +51,7 @@
         <string/>
        </property>
        <property name="icon">
-        <iconset resource="../../assets/icons/AfficherTout.qrc">
+        <iconset>
          <normaloff>../../assets/icons/returnOff.svg</normaloff>
          <normalon>../../assets/icons/returnOn.svg</normalon>
          <selectedoff>../../assets/icons/returnOff.svg</selectedoff>
@@ -206,7 +206,7 @@
   <tabstop>table</tabstop>
  </tabstops>
  <resources>
-  <include location="../../assets/qtResources/AfficherTout.qrc"/>
+  <include location="../../assets/icons/AfficherTout.qrc"/>
  </resources>
  <connections/>
 </ui>

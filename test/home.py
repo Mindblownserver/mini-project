@@ -1,29 +1,24 @@
-from PyQt5 import QtWidgets, uic
+from PyQt5.QtWidgets import QMainWindow,QWidget,QApplication,QStackedWidget
+from PyQt5.uic import loadUi
 import os
-class Page1(QtWidgets.QWidget):
-    def __init__(self, parent=None):
-        QtWidgets.QWidget.__init__(self)
-        path = os.path.dirname(__file__) + "/"
-        uic.loadUi(path+'first.ui', self)
+class Page1(QWidget):
+    def __init__(self):
+        super().__init__()
+        loadUi('/home/yassine/project/2023/mini-project/Personne/Afficher/affichageUi.ui',self)
+class App(QMainWindow):
+    def __init__(self):
+        super().__init__()
 
-class Page2(QtWidgets.QWidget):
-    def __init__(self, parent=None):
-        QtWidgets.QWidget.__init__(self)
-        path = os.path.dirname(__file__) + "/"
-        uic.loadUi(path+'second.ui', self)
+        # Create a stacked widget to hold the pages
+        self.stack = QStackedWidget(self)
 
-class App(QtWidgets.QMainWindow):
-        def __init__(self):
-            QtWidgets.QMainWindow.__init__(self)
-
-            wid = Page1()
-
-            self.grid = QtWidgets.QGridLayout()
-            self.grid.addWidget(wid,0,0)
-            self.frame.setLayout(self.grid)
-
+        # Create the pages and add them to the stack
+        self.page1 = Page1()
+        self.stack.addWidget(self.page1)
+        # Set the stacked widget as the central widget
+        self.setCentralWidget(self.stack)
 if __name__ == '__main__':
-    app = QtWidgets.QApplication([])
+    app = QApplication([])
     window = App()
     window.show()
     app.exec_()

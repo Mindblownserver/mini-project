@@ -6,12 +6,16 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1041</width>
     <height>605</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Project Corona</string>
+   <string>Projet Corona</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>assets/icons/CoronaOn.png</normaloff>assets/icons/CoronaOn.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -19,7 +23,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>1041</width>
      <height>22</height>
     </rect>
    </property>
@@ -55,11 +59,11 @@
       <string>Recherche et affichage</string>
      </property>
      <addaction name="actionAfficher"/>
-     <addaction name="actionRecherche_par_num_ro_t_l_phone"/>
-     <addaction name="actionRecherche_par_indicatif"/>
-     <addaction name="actionRecherche_par_nationalit"/>
-     <addaction name="actionRecherche_par_personnes_d_c_d_s"/>
-     <addaction name="actionRecherche_par_des_personnes_non_d_c_d_s"/>
+     <addaction name="actionRechercheTel"/>
+     <addaction name="actionRechercheInd"/>
+     <addaction name="actionRechercheNat"/>
+     <addaction name="actionRechercheDecede"/>
+     <addaction name="actionRechercheNonDecede"/>
     </widget>
     <addaction name="menuMise_jour_des_personnes"/>
     <addaction name="menuRecherche_affichage"/>
@@ -155,27 +159,27 @@
     <string>Contenu du dictionnaire personne</string>
    </property>
   </action>
-  <action name="actionRecherche_par_num_ro_t_l_phone">
+  <action name="actionRechercheTel">
    <property name="text">
     <string>Recherche par numéro téléphone</string>
    </property>
   </action>
-  <action name="actionRecherche_par_indicatif">
+  <action name="actionRechercheInd">
    <property name="text">
     <string>Recherche par indicatif</string>
    </property>
   </action>
-  <action name="actionRecherche_par_nationalit">
+  <action name="actionRechercheNat">
    <property name="text">
     <string>Recherche par nationalité</string>
    </property>
   </action>
-  <action name="actionRecherche_par_personnes_d_c_d_s">
+  <action name="actionRechercheDecede">
    <property name="text">
     <string>Recherche par personnes décédés</string>
    </property>
   </action>
-  <action name="actionRecherche_par_des_personnes_non_d_c_d_s">
+  <action name="actionRechercheNonDecede">
    <property name="text">
     <string>Recherche par des personnes non décédés</string>
    </property>
@@ -266,6 +270,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="assets/icons/acceuil.qrc"/>
+ </resources>
  <connections/>
 </ui>

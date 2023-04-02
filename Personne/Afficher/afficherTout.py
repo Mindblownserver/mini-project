@@ -1,21 +1,35 @@
 import csv
 from PyQt5.uic import loadUi
-from PyQt5.QtWidgets import QApplication, QTableWidget, QTableWidgetItem, QMainWindow
+from PyQt5.QtWidgets import QApplication, QTableWidget, QTableWidgetItem, QWidget
 import os
 # fetch data
 
 
 # Initialisation de l'application
-class AfficherWindow(QMainWindow):
-    def __init__(self):
+class AfficherWindow(QWidget):
+    def __init__(self,critere=""):
         super().__init__()
         self.path = os.path.dirname(__file__) + "/"
         self.personnes = list(dict())
-        ui_file = self.path+"affichage.ui"
+        ui_file = self.path+"affichageUi.ui"
         loadUi(ui_file, self)
+
+        self.afficheMode(critere)
         self.getDataFromFile()
         self.showData(self.personnes)
+        # Recherche listener
+        #self.msg.textChanged.connect(lambda x: print(x))
+
+
+        self.returnBtn.clicked.connect(self.goHome)
         self.show()
+    def goHome(self):
+        self.parent().setCurrentIndex(0)
+
+    def afficheMode(self,msg):
+        if(msg=="Tout"):
+            self.critere.hide()
+        self.text.setText(msg)
 
     def getDataFromFile(self):
         with open(self.path+"personnes.csv") as file:
@@ -50,9 +64,3 @@ class AfficherWindow(QMainWindow):
             self.table.setItem(row, 7, QTableWidgetItem(personne["Mois"]))
             self.table.setItem(row, 8, QTableWidgetItem(personne["Annee"]))
             self.table.setItem(row, 9, QTableWidgetItem(personne["Decede"]))
-
-
-if __name__ == '__main__':
-    app = QApplication([])
-    window = AfficherWindow()
-    app.exec_()
