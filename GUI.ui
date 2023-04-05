@@ -50,7 +50,7 @@
       <addaction name="actionT_l_phone"/>
       <addaction name="actionAdresse"/>
      </widget>
-     <addaction name="actionAjouter_personne_2"/>
+     <addaction name="actionAjouter"/>
      <addaction name="menuSupprimer_personne"/>
      <addaction name="menuModifier_personne"/>
     </widget>
@@ -124,7 +124,7 @@
    <addaction name="menuEnregistrement_et_r_cup_ration"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionAjouter_personne_2">
+  <action name="actionAjouter">
    <property name="text">
     <string>Ajouter personne</string>
    </property>

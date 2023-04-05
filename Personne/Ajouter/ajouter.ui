@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1043</width>
+    <height>557</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>URW Bookman</family>
+    <pointsize>15</pointsize>
+    <weight>3</weight>
+    <italic>false</italic>
+    <bold>false</bold>
+    <strikeout>false</strikeout>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">color: rgb(192, 191, 188);
+font: 25 15pt &quot;URW Bookman&quot;;</string>
+  </property>
+  <widget class="QLabel" name="titre">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>70</y>
+     <width>241</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>URW Gothic</family>
+     <pointsize>22</pointsize>
+     <weight>8</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(28, 113, 216);
+font: 63 22pt &quot;URW Gothic&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Ajouter personne</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="dead">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>440</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(36, 31, 49);</string>
+   </property>
+   <property name="text">
+    <string>Décédé</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="ajouter">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>480</y>
+     <width>141</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+background-color:rgb(28, 113, 216);
+border-color: rgb(28, 113, 216);
+border-style: solid;
+border-width: 2px;
+border-radius: 15px;
+padding:5px;
+color:white;
+width: 5em;
+height: 30px;
+
+}
+QPushButton:hover{
+	background-color:white;
+	color: rgb(28, 113, 216);
+
+}</string>
+   </property>
+   <property name="text">
+    <string>Ajouter</string>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="returnBtn">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>51</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="toolTip">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;return to home page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton:hover{
+	background-color:rgba(255,255,255,1);
+	border: 2px solid rgb(28, 113, 216);
+	border-radius: 5px;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../assets/icons/returnOff.svg</normaloff>
+     <normalon>../../assets/icons/returnOn.svg</normalon>
+     <selectedoff>../../assets/icons/returnOff.svg</selectedoff>
+     <selectedon>../../assets/icons/returnOn.svg</selectedon>../../assets/icons/returnOff.svg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>64</width>
+     <height>64</height>
+    </size>
+   </property>
+   <property name="autoDefault">
+    <bool>false</bool>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>110</y>
+     <width>841</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>27</x>
+     <y>140</y>
+     <width>841</width>
+     <height>281</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="horizontalSpacing">
+     <number>119</number>
+    </property>
+    <item row="1" column="0">
+     <widget class="QLineEdit" name="nom">
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 0, 0);
+border:  0.5px solid rgb(192, 191, 188);
+border-radius:5px;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLineEdit" name="age">
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 0, 0);
+border:  0.5px solid rgb(192, 191, 188);
+border-radius:5px;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Nom</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QDateEdit" name="dateEdit">
+      <property name="styleSheet">
+       <string notr="true">color:rgb(36, 31, 49);</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Prenom</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="prenom">
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 0, 0);
+border:  0.5px solid rgb(192, 191, 188);
+border-radius:5px;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Telephone</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLineEdit" name="Tel">
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 0, 0);
+border:  0.5px solid rgb(192, 191, 188);
+border-radius:5px;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>Nationalité</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="Nat">
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 0, 0);
+border:  0.5px solid rgb(192, 191, 188);
+border-radius:5px;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLineEdit" name="CIN">
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 0, 0);
+border:  0.5px solid rgb(192, 191, 188);
+border-radius:5px;</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Date de l'infection</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>CIN</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Age</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>Adresse</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QLineEdit" name="Adr">
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 0, 0);
+border:  0.5px solid rgb(192, 191, 188);
+border-radius:5px;</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

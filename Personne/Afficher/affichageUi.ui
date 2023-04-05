@@ -79,6 +79,39 @@
     </widget>
    </item>
    <item>
+    <widget class="QFrame" name="frame_2">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="text">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>922</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(28, 113, 216);
+font: 63 22pt &quot;URW Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Lorem Ipsum</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item>
     <widget class="QFrame" name="critere">
      <property name="minimumSize">
       <size>
@@ -97,13 +130,6 @@
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_3">
       <item>
-       <widget class="QLabel" name="text">
-        <property name="text">
-         <string> TextLabel</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QLineEdit" name="msg">
         <property name="minimumSize">
          <size>
@@ -114,7 +140,7 @@
        </widget>
       </item>
       <item alignment="Qt::AlignLeft">
-       <widget class="QPushButton" name="recherche">
+       <widget class="QPushButton" name="rechercheBtn">
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
         </property>
