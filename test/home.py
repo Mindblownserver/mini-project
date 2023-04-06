@@ -8,7 +8,7 @@ class Page1(QWidget):
 class App(QMainWindow):
     def __init__(self):
         super().__init__()
-
+        
         # Create a stacked widget to hold the pages
         self.stack = QStackedWidget(self)
 

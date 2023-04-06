@@ -114,7 +114,7 @@
      <string>Enregistrement et récupération</string>
     </property>
     <addaction name="actionEnregistrement_fichier_personnes"/>
-    <addaction name="actionR_cup_ration_fichier_personnes"/>
+    <addaction name="actionRPersonne"/>
     <addaction name="actionEnregistrement_fichier_maladies"/>
     <addaction name="actionR_cup_ration_fichier_maladies"/>
    </widget>
@@ -254,7 +254,7 @@
     <string>Enregistrement fichier personnes</string>
    </property>
   </action>
-  <action name="actionR_cup_ration_fichier_personnes">
+  <action name="actionRPersonne">
    <property name="text">
     <string>Récupération fichier personnes</string>
    </property>

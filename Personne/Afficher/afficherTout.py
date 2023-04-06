@@ -7,41 +7,19 @@ import os
 
 # Initialisation de l'application
 class AfficherWindow(QWidget):
-    def __init__(self,message,critere):
+    def __init__(self,personnes,message="",critere=""):
         super().__init__()
         self.path = os.path.dirname(__file__) + "/"
-        self.personnes = list(dict())
         ui_file = self.path+"affichageUi.ui"
         loadUi(ui_file, self)
-
         self.afficheMode(message,critere)
-        self.getDataFromFile(critere)
-        self.showData(self.personnes)
+        self.showData(personnes)
         # Recherche listener
         #self.msg.textChanged.connect(lambda x: print(x))
         self.rechercheBtn.clicked.connect(lambda: self.showData(self.recherche(critere=critere)))
         self.returnBtn.clicked.connect(self.goHome)
         self.show()
-    def getDataFromFile(self,critere):
-        with open(os.getcwd()+"/assets/data/personnes.csv") as file:
-            reader = csv.reader(file, delimiter=",")
-            for i, row in enumerate(reader):
-                if i != 0:
-                    if(critere[0].isdigit() and row[9]!=critere[0]):
-                        continue
-                    self.personnes.append({
-                        "CIN": row[0],
-                        "Nom": row[1],
-                        "Prenom": row[2],
-                        "Tel": row[3],
-                        "Nationalite": row[4],
-                        "Age": row[5],
-                        "Jour": row[6],
-                        "Mois": row[7],
-                        "Annee": row[8],
-                        "Decede": row[9],
-                    })
-
+    
     def showData(self, personnes):
         self.table.setEditTriggers(QTableWidget.NoEditTriggers)
         self.table.setRowCount(len(personnes))

@@ -69,7 +69,7 @@ font: 63 22pt &quot;URW Gothic&quot;;</string>
     <string>Décédé</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="ajouter">
+  <widget class="QPushButton" name="ajouterBtn">
    <property name="geometry">
     <rect>
      <x>30</x>
@@ -191,7 +191,7 @@ QPushButton:hover{
      <number>119</number>
     </property>
     <item row="1" column="0">
-     <widget class="QLineEdit" name="nom">
+     <widget class="QLineEdit" name="Lnom">
       <property name="styleSheet">
        <string notr="true">color:rgb(0, 0, 0);
 border:  0.5px solid rgb(192, 191, 188);
@@ -200,7 +200,7 @@ border-radius:5px;</string>
      </widget>
     </item>
     <item row="1" column="2">
-     <widget class="QLineEdit" name="age">
+     <widget class="QLineEdit" name="LAge">
       <property name="styleSheet">
        <string notr="true">color:rgb(0, 0, 0);
 border:  0.5px solid rgb(192, 191, 188);
@@ -216,7 +216,7 @@ border-radius:5px;</string>
      </widget>
     </item>
     <item row="5" column="1">
-     <widget class="QDateEdit" name="dateEdit">
+     <widget class="QDateEdit" name="LDate">
       <property name="styleSheet">
        <string notr="true">color:rgb(36, 31, 49);</string>
       </property>
@@ -230,7 +230,7 @@ border-radius:5px;</string>
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QLineEdit" name="prenom">
+     <widget class="QLineEdit" name="Lprenom">
       <property name="styleSheet">
        <string notr="true">color:rgb(0, 0, 0);
 border:  0.5px solid rgb(192, 191, 188);
@@ -246,7 +246,7 @@ border-radius:5px;</string>
      </widget>
     </item>
     <item row="5" column="0">
-     <widget class="QLineEdit" name="Tel">
+     <widget class="QLineEdit" name="LTel">
       <property name="styleSheet">
        <string notr="true">color:rgb(0, 0, 0);
 border:  0.5px solid rgb(192, 191, 188);
@@ -262,7 +262,7 @@ border-radius:5px;</string>
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QLineEdit" name="Nat">
+     <widget class="QLineEdit" name="LNat">
       <property name="styleSheet">
        <string notr="true">color:rgb(0, 0, 0);
 border:  0.5px solid rgb(192, 191, 188);
@@ -271,7 +271,7 @@ border-radius:5px;</string>
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QLineEdit" name="CIN">
+     <widget class="QLineEdit" name="LCIN">
       <property name="styleSheet">
        <string notr="true">color:rgb(0, 0, 0);
 border:  0.5px solid rgb(192, 191, 188);
@@ -308,7 +308,7 @@ border-radius:5px;</string>
      </widget>
     </item>
     <item row="3" column="2">
-     <widget class="QLineEdit" name="Adr">
+     <widget class="QLineEdit" name="LAdr">
       <property name="styleSheet">
        <string notr="true">color:rgb(0, 0, 0);
 border:  0.5px solid rgb(192, 191, 188);
