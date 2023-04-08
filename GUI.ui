@@ -27,7 +27,7 @@
      <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuMise_jour">
+   <widget class="QMenu" name="MiseAJour">
     <property name="title">
      <string>Gestion des personnes</string>
     </property>
@@ -68,7 +68,7 @@
     <addaction name="menuMise_jour_des_personnes"/>
     <addaction name="menuRecherche_affichage"/>
    </widget>
-   <widget class="QMenu" name="menuGestion_des_maladies">
+   <widget class="QMenu" name="Gestion">
     <property name="title">
      <string>Gestion des maladies</string>
     </property>
@@ -100,7 +100,7 @@
     <addaction name="menuMise_jour_2"/>
     <addaction name="menuRecherche_affichage_2"/>
    </widget>
-   <widget class="QMenu" name="menuCalcul_et_affichage">
+   <widget class="QMenu" name="Calcul">
     <property name="title">
      <string>Calcul et affichage</string>
     </property>
@@ -109,19 +109,19 @@
     <addaction name="actionPersonnes_d_c_d_s"/>
     <addaction name="actionPersonnes_risque"/>
    </widget>
-   <widget class="QMenu" name="menuEnregistrement_et_r_cup_ration">
+   <widget class="QMenu" name="Enregistrement">
     <property name="title">
      <string>Enregistrement et récupération</string>
     </property>
-    <addaction name="actionEnregistrement_fichier_personnes"/>
+    <addaction name="actionEPersonne"/>
     <addaction name="actionRPersonne"/>
     <addaction name="actionEnregistrement_fichier_maladies"/>
     <addaction name="actionR_cup_ration_fichier_maladies"/>
    </widget>
-   <addaction name="menuMise_jour"/>
-   <addaction name="menuGestion_des_maladies"/>
-   <addaction name="menuCalcul_et_affichage"/>
-   <addaction name="menuEnregistrement_et_r_cup_ration"/>
+   <addaction name="MiseAJour"/>
+   <addaction name="Gestion"/>
+   <addaction name="Calcul"/>
+   <addaction name="Enregistrement"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionAjouter">
@@ -249,7 +249,7 @@
     <string>Personnes à risque</string>
    </property>
   </action>
-  <action name="actionEnregistrement_fichier_personnes">
+  <action name="actionEPersonne">
    <property name="text">
     <string>Enregistrement fichier personnes</string>
    </property>

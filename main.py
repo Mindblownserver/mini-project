@@ -4,6 +4,7 @@ import os
 import csv
 from Personne.Afficher.afficherTout import AfficherWindow
 from Personne.Ajouter.ajouter import AjouterPage
+from assets.widgets.messageBox import MessageBox
 # Initialisation de l'application
 
 class HomePage(QWidget):
@@ -20,7 +21,9 @@ class MainWindow(QMainWindow):
         loadUi(ui_file, self)
         self.personnes = list(dict())
         self.stack = QStackedWidget(self)
-
+        self.MiseAJour.setEnabled(False)
+        self.Gestion.setEnabled(False)
+        self.Calcul.setEnabled(False)
         # Pages
         self.Home = HomePage()
         self.Ajouter = AjouterPage(self.personnes)
@@ -32,6 +35,7 @@ class MainWindow(QMainWindow):
         # Mise à jour
         self.actionAjouter.triggered.connect(self.openAjouter)
         self.actionRPersonne.triggered.connect(self.RPersonne)
+        self.actionEPersonne.triggered.connect(self.EPersonne)
         # Recherche & afficher
         self.actionAfficher.triggered.connect(lambda :self.openAfficher("Fiche des personnes malades","Tout"))
         self.actionRechercheTel.triggered.connect(lambda :self.openAfficher("Recherche par numéro du Téléphone","Tel"))
@@ -45,8 +49,10 @@ class MainWindow(QMainWindow):
         self.Afficher = AfficherWindow(self.personnes,msg,cr)
         self.stack.addWidget(self.Afficher)
         self.stack.setCurrentWidget(self.Afficher)
+    
     def openAjouter(self):
         self.stack.setCurrentWidget(self.Ajouter)
+    
     def RPersonne(self):
         self.personnes.clear()
         with open(os.getcwd()+"/assets/data/personnes.csv") as file:
@@ -64,16 +70,11 @@ class MainWindow(QMainWindow):
                         "Mois": row[7],
                         "Annee": row[8],
                         "Decede": row[9],
+                        "Adresse": row[10]
                     })
-        msg = QMessageBox()
-        msg.setWindowTitle("Projet Corona")
-        msg.setText("Opération a été un succès")
-        msg.setIcon(QMessageBox.Information)
-        msg.setDefaultButton(QMessageBox.Retry)
-        msg.setInformativeText("On a récupéré l'information situé dans le fichier personnes.csv")
-#        msg.setDetailedText("details")
-        msg.exec_()
-
+        self.MiseAJour.setEnabled(True)
+        msg = MessageBox("On a récupéré l'information situé dans le fichier personnes.csv")
+    
     def EPersonne(self):
         with open(os.path.dirname(__file__)+"/assets/data/personnes.csv", mode="w") as file:
             headers = [k for k in self.personnes[0].keys()]

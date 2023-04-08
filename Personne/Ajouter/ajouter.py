@@ -1,7 +1,7 @@
 import os
 from PyQt5.uic import loadUi 
 from PyQt5.QtWidgets import QWidget,QApplication
-
+from assets.widgets.messageBox import *
 class AjouterPage(QWidget):
     def __init__(self,personnes):
         super().__init__()
@@ -28,19 +28,26 @@ class AjouterPage(QWidget):
         date = self.LDate.text().split("/")
         day,month,year = date[0],date[1],date[2]
         decede = 1 if self.dead.isChecked() else 0
-        print(nom,prenom,nat,age,tel,cin,adr,day,month,year,decede)
-        personnes.append({
-            "CIN": cin,
-            "Nom": nom,
-            "Prenom": prenom,
-            "Tel": tel,
-            "Nationalite": nat,
-            "Age": age,
-            "Jour": day,
-            "Mois": month,
-            "Annee":year,
-            "Decede": decede,
-        })
+        try:
+            personnes.append({
+                "CIN": cin,
+                "Nom": nom,
+                "Prenom": prenom,
+                "Tel": tel,
+                "Nationalite": nat,
+                "Age": age,
+                "Jour": day,
+                "Mois": month,
+                "Annee":year,
+                "Decede": decede,
+                "Adresse": adr
+            })
+            msg = MessageBox("Le patient {} {} a été ajouté!".format(nom,prenom))
+        except:
+            msg = MessageBox("Le patient {} {} n'a pas été ajouté!".format(nom,prenom))
+            msg.setIcon(QMessageBox.critical)
+        finally:
+            self.parent().setCurrentIndex(0)
 if __name__ == "__main__":
     app= QApplication([])
     widget = AjouterPage()
