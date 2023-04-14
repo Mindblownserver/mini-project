@@ -1,10 +1,7 @@
 import csv
 from PyQt5.uic import loadUi
-from PyQt5.QtWidgets import QApplication, QTableWidget, QTableWidgetItem, QWidget
+from PyQt5.QtWidgets import QTableWidget, QTableWidgetItem, QWidget
 import os
-# fetch data
-
-
 # Initialisation de l'application
 class AfficherWindow(QWidget):
     def __init__(self,personnes,message="",critere=""):

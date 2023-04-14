@@ -1,7 +1,8 @@
 from PyQt5.uic import loadUi
-from PyQt5.QtWidgets import QMessageBox,QApplication, QMainWindow,QStackedWidget,QWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow,QStackedWidget,QWidget
 import os
 import csv
+from Personne.modifer.modifier import ModifierPage
 from Personne.Afficher.afficherTout import AfficherWindow
 from Personne.Ajouter.ajouter import AjouterPage
 from assets.widgets.messageBox import MessageBox
@@ -10,9 +11,10 @@ from assets.widgets.messageBox import MessageBox
 class HomePage(QWidget):
     def __init__(self):
         super().__init__()
-        path = os.path.dirname(__file__) + "/"
+        path = os.path.dirname(__file__) + "/Home/"
         ui_file = path+"home.ui"
         loadUi(ui_file, self)
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -29,14 +31,17 @@ class MainWindow(QMainWindow):
         self.Ajouter = AjouterPage(self.personnes)
         self.stack.addWidget(self.Home)
         self.stack.addWidget(self.Ajouter)
+        
         # Set the central widget to the stacked widget
         self.setCentralWidget(self.stack)
         
-        # Mise à jour
-        self.actionAjouter.triggered.connect(self.openAjouter)
+        # Mise à jour menu
+        self.actionAjouter.triggered.connect(lambda: self.openPage(self.Ajouter))
+        self.actionTel.triggered.connect(lambda: self.openModifier("Téléphone","Tel"))
+        self.actionAdresse.triggered.connect(lambda: self.openModifier("Adresse","Adresse"))
         self.actionRPersonne.triggered.connect(self.RPersonne)
         self.actionEPersonne.triggered.connect(self.EPersonne)
-        # Recherche & afficher
+        # Recherche & afficher menu
         self.actionAfficher.triggered.connect(lambda :self.openAfficher("Fiche des personnes malades","Tout"))
         self.actionRechercheTel.triggered.connect(lambda :self.openAfficher("Recherche par numéro du Téléphone","Tel"))
         self.actionRechercheInd.triggered.connect(lambda :self.openAfficher("Recherche par indicatif","indi"))
@@ -48,10 +53,15 @@ class MainWindow(QMainWindow):
     def openAfficher(self,msg,cr):
         self.Afficher = AfficherWindow(self.personnes,msg,cr)
         self.stack.addWidget(self.Afficher)
-        self.stack.setCurrentWidget(self.Afficher)
+        self.openPage(self.Afficher)
     
-    def openAjouter(self):
-        self.stack.setCurrentWidget(self.Ajouter)
+    def openModifier(self,msg,cr):
+        self.Modifier = ModifierPage(self.personnes,msg,cr)
+        self.stack.addWidget(self.Modifier)
+        self.openPage(self.Modifier)
+
+    def openPage(self, page):
+        self.stack.setCurrentWidget(page)
     
     def RPersonne(self):
         self.personnes.clear()

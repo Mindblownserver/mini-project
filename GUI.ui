@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1041</width>
-    <height>605</height>
+    <width>948</width>
+    <height>606</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,7 +23,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1041</width>
+     <width>948</width>
      <height>22</height>
     </rect>
    </property>
@@ -47,7 +47,7 @@
       <property name="title">
        <string>Modifier personne</string>
       </property>
-      <addaction name="actionT_l_phone"/>
+      <addaction name="actionTel"/>
       <addaction name="actionAdresse"/>
      </widget>
      <addaction name="actionAjouter"/>
@@ -144,7 +144,7 @@
     <string>Suppression des personnes d'un indicatif donné</string>
    </property>
   </action>
-  <action name="actionT_l_phone">
+  <action name="actionTel">
    <property name="text">
     <string>Téléphone</string>
    </property>
@@ -272,6 +272,7 @@
  </widget>
  <resources>
   <include location="assets/icons/acceuil.qrc"/>
+  <include location="assets/icons/background.qrc"/>
  </resources>
  <connections/>
 </ui>
