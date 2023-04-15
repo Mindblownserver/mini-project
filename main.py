@@ -1,11 +1,13 @@
-from PyQt5.uic import loadUi
-from PyQt5.QtWidgets import QApplication, QMainWindow,QStackedWidget,QWidget
-import os
-import csv
+from PyQt5.QtWidgets import QWidget,QApplication, QMainWindow,QStackedWidget
 from Personne.modifer.modifier import ModifierPage
 from Personne.Afficher.afficherTout import AfficherWindow
 from Personne.Ajouter.ajouter import AjouterPage
+from Personne.Supprimer.supprimer import SupprimerPage  
 from assets.widgets.messageBox import MessageBox
+from PyQt5.uic import loadUi
+import os
+import csv
+
 # Initialisation de l'application
 
 class HomePage(QWidget):
@@ -15,8 +17,6 @@ class HomePage(QWidget):
         ui_file = path+"home.ui"
         loadUi(ui_file, self)
         
-
-
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -42,6 +42,7 @@ class MainWindow(QMainWindow):
         self.actionAjouter.triggered.connect(lambda: self.openPage(self.Ajouter))
         self.actionTel.triggered.connect(lambda: self.openModifier("Téléphone","Tel"))
         self.actionAdresse.triggered.connect(lambda: self.openModifier("Adresse","Adresse"))
+        self.actionSuppPers.triggered.connect(lambda: self.openSupprimer())
         self.actionRPersonne.triggered.connect(self.RPersonne)
         self.actionEPersonne.triggered.connect(self.EPersonne)
         # Recherche & afficher menu
@@ -58,6 +59,16 @@ class MainWindow(QMainWindow):
         self.stack.addWidget(self.Afficher)
         self.openPage(self.Afficher)
     
+    def openSupprimer(self,msg=""):
+        print("msg:",msg)
+        if(msg==""):
+            self.Supprimer = SupprimerPage(self.personnes)
+        else:
+            pass
+        self.stack.addWidget(self.Supprimer)
+        self.openPage(self.Supprimer)
+    
+
     def openModifier(self,msg,cr):
         self.Modifier = ModifierPage(self.personnes,msg,cr)
         self.stack.addWidget(self.Modifier)

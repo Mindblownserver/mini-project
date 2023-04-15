@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1086</width>
+    <width>941</width>
     <height>648</height>
    </rect>
   </property>
@@ -27,7 +27,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1086</width>
+     <width>941</width>
      <height>22</height>
     </rect>
    </property>
@@ -43,7 +43,7 @@
       <property name="title">
        <string>Supprimer personne</string>
       </property>
-      <addaction name="actionSuppression_personne_donn"/>
+      <addaction name="actionSuppPers"/>
       <addaction name="actionSuppression_des_personnes_d_une_nationalit_donn"/>
       <addaction name="actionSuppression_des_personnes_d_un_indicatif_donn"/>
      </widget>
@@ -132,7 +132,7 @@
     <string>Ajouter personne</string>
    </property>
   </action>
-  <action name="actionSuppression_personne_donn">
+  <action name="actionSuppPers">
    <property name="text">
     <string>Suppression personne donné</string>
    </property>

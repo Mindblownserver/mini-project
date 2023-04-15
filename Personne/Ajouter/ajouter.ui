@@ -95,7 +95,7 @@ height: 30px;
 
 }
 QPushButton:hover{
-	background-color:white;
+	background-color:none;
 	color: rgb(28, 113, 216);
 
 }</string>
@@ -127,7 +127,7 @@ QPushButton:hover{
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton:hover{
-	background-color:rgba(255,255,255,1);
+	background-color:none;
 	border: 2px solid rgb(28, 113, 216);
 	border-radius: 5px;
 }</string>
