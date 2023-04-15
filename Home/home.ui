@@ -6,17 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1069</width>
-    <height>588</height>
+    <width>1089</width>
+    <height>662</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-image: url(:/bg/bg.jpeg);
+   <string notr="true">/*background-image: url(:/BG/bg.jpeg);
 background-repeat:no-repeat;
-background-position:center;</string>
+background-position:center;*/</string>
   </property>
   <widget class="QFrame" name="title">
    <property name="geometry">
@@ -29,7 +29,8 @@ background-position:center;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">background:none;
-color:white;</string>
+color: white;
+</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::NoFrame</enum>
@@ -77,11 +78,33 @@ color:white;</string>
       <bold>false</bold>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+</string>
+    </property>
     <property name="text">
      <string>Crée par Mohamed Yassine Kharrat </string>
     </property>
    </widget>
   </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>-290</x>
+     <y>-610</y>
+     <width>3000</width>
+     <height>1900</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap>../assets/icons/bg.jpeg</pixmap>
+   </property>
+  </widget>
+  <zorder>label_3</zorder>
+  <zorder>title</zorder>
  </widget>
  <resources>
   <include location="../assets/icons/background.qrc"/>

@@ -14,6 +14,8 @@ class HomePage(QWidget):
         path = os.path.dirname(__file__) + "/Home/"
         ui_file = path+"home.ui"
         loadUi(ui_file, self)
+        
+
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -31,11 +33,12 @@ class MainWindow(QMainWindow):
         self.Ajouter = AjouterPage(self.personnes)
         self.stack.addWidget(self.Home)
         self.stack.addWidget(self.Ajouter)
-        
-        # Set the central widget to the stacked widget
+        self.stack.setContentsMargins(0,0,0,0)
+        #fdsfsdfdsfsdf
+    # Set the central widget to the stacked widget
         self.setCentralWidget(self.stack)
         
-        # Mise à jour menu
+        # Mise à jour menu  
         self.actionAjouter.triggered.connect(lambda: self.openPage(self.Ajouter))
         self.actionTel.triggered.connect(lambda: self.openModifier("Téléphone","Tel"))
         self.actionAdresse.triggered.connect(lambda: self.openModifier("Adresse","Adresse"))

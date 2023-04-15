@@ -37,8 +37,8 @@
    <widget class="QPushButton" name="returnBtn">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>2</y>
+      <x>-10</x>
+      <y>10</y>
       <width>51</width>
       <height>41</height>
      </rect>
@@ -60,10 +60,10 @@
     </property>
     <property name="icon">
      <iconset>
-      <normaloff>../../assets/icons/returnOff.svg</normaloff>
-      <normalon>../../assets/icons/returnOn.svg</normalon>
-      <selectedoff>../../assets/icons/returnOff.svg</selectedoff>
-      <selectedon>../../assets/icons/returnOn.svg</selectedon>../../assets/icons/returnOff.svg</iconset>
+      <normaloff>../../../../../assets/icons/returnOff.svg</normaloff>
+      <normalon>../../../../../assets/icons/returnOn.svg</normalon>
+      <selectedoff>../../../../../assets/icons/returnOff.svg</selectedoff>
+      <selectedon>../../../../../assets/icons/returnOn.svg</selectedon>../../../../../assets/icons/returnOff.svg</iconset>
     </property>
     <property name="iconSize">
      <size>
@@ -133,6 +133,43 @@ font: 63 22pt &quot;URW Gothic&quot;;</string>
      <enum>Qt::Horizontal</enum>
     </property>
    </widget>
+  </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>130</y>
+     <width>391</width>
+     <height>351</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 17pt &quot;Ubuntu&quot;;</string>
+   </property>
+   <property name="movement">
+    <enum>QListView::Static</enum>
+   </property>
+   <property name="spacing">
+    <number>10</number>
+   </property>
+   <property name="viewMode">
+    <enum>QListView::ListMode</enum>
+   </property>
+   <item>
+    <property name="text">
+     <string>Mohamed Yassine Kharrat</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Ahmed Chahine Kharrat</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>Youssef Allani</string>
+    </property>
+   </item>
   </widget>
  </widget>
  <resources/>
