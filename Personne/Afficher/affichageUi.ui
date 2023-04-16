@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>940</width>
+    <width>1056</width>
     <height>592</height>
    </rect>
   </property>
@@ -238,6 +238,11 @@ QPushButton:hover{
         <column>
          <property name="text">
           <string>Jour</string>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Mois</string>
          </property>
         </column>
         <column>

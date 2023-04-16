@@ -10,6 +10,7 @@ class AjouterPage(QWidget):
         loadUi(ui_file,self)
         self.returnBtn.clicked.connect(self.goHome)
         self.ajouterBtn.clicked.connect(lambda : self.ajouter(personnes=personnes))
+        self.generate.clicked.connect(lambda: self.generer(personnes))
 
         self.show()
     def goHome(self):
@@ -47,7 +48,22 @@ class AjouterPage(QWidget):
             msg = MessageBox("Le patient {} {} n'a pas été ajouté!".format(nom,prenom))
             msg.setIcon(QMessageBox.critical)
         finally:
-            self.parent().setCurrentIndex(0)
+            self.goHome()
+    def generer(self,personnes):
+        personnes.append({
+                "CIN": "13213423",
+                "Nom": "Kharrat",
+                "Prenom": "Mohamed Yassine",
+                "Tel": "8765434",
+                "Nationalite": "Tun",
+                "Age": "42",
+                "Jour": "12",
+                "Mois": "12",
+                "Annee":"2341",
+                "Decede": "0",
+                "Adresse": "DSQDSQD"
+            })
+        self.goHome()
 if __name__ == "__main__":
     app= QApplication([])
     widget = AjouterPage()

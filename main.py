@@ -28,6 +28,7 @@ class MainWindow(QMainWindow):
         self.MiseAJour.setEnabled(False)
         self.Gestion.setEnabled(False)
         self.Calcul.setEnabled(False)
+        self.actionEPersonne.setEnabled(False)
         # Pages
         self.Home = HomePage()
         self.Ajouter = AjouterPage(self.personnes)
@@ -50,12 +51,12 @@ class MainWindow(QMainWindow):
         self.actionRechercheTel.triggered.connect(lambda :self.openAfficher("Recherche par numéro du Téléphone","Tel"))
         self.actionRechercheInd.triggered.connect(lambda :self.openAfficher("Recherche par indicatif","indi"))
         self.actionRechercheNat.triggered.connect(lambda :self.openAfficher("Recherche par nationalité","Nationalite"))
-        self.actionRechercheDecede.triggered.connect(lambda :self.openAfficher("Recherche des personnes décédés", "1Decede"))
-        self.actionRechercheNonDecede.triggered.connect(lambda :self.openAfficher("Recherche des personnes non décédés","0Decede"))
+        self.actionRechercheDecede.triggered.connect(lambda :self.openAfficher("Recherche des personnes décédés par leurs numéro du téléphone", "Tel","1"))
+        self.actionRechercheNonDecede.triggered.connect(lambda :self.openAfficher("Recherche des personnes non décédés par leurs numéro du téléphone","Tel","0"))
          
         self.show()
-    def openAfficher(self,msg,cr):
-        self.Afficher = AfficherWindow(self.personnes,msg,cr)
+    def openAfficher(self,msg,cr,st=""):
+        self.Afficher = AfficherWindow(self.personnes,msg,cr,st)
         self.stack.addWidget(self.Afficher)
         self.openPage(self.Afficher)
     
@@ -97,12 +98,14 @@ class MainWindow(QMainWindow):
                         "Adresse": row[10]
                     })
         self.MiseAJour.setEnabled(True)
-        msg = MessageBox("On a récupéré l'information situé dans le fichier personnes.csv")
+        self.actionEPersonne.setEnabled(True)
+        self.actionRPersonne.setEnabled(False)
+        MessageBox("On a récupéré l'information situé dans le fichier personnes.csv")
     
     def EPersonne(self):
         with open(os.path.dirname(__file__)+"/assets/data/personnes.csv", mode="w") as file:
             headers = [k for k in self.personnes[0].keys()]
-            writer = csv.DictWriter(csv,fieldnames=headers)
+            writer = csv.DictWriter(file,fieldnames=headers)
             writer.writeheader()
             writer.writerows(self.personnes)
 if __name__ == '__main__':
