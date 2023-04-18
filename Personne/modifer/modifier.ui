@@ -156,11 +156,23 @@ font: 63 22pt &quot;URW Gothic&quot;;</string>
       </item>
       <item>
        <widget class="QLineEdit" name="CIN">
+        <property name="focusPolicy">
+         <enum>Qt::StrongFocus</enum>
+        </property>
+        <property name="autoFillBackground">
+         <bool>false</bool>
+        </property>
         <property name="styleSheet">
          <string notr="true">color:rgb(0, 0, 0);
 border:  0.5px solid rgb(192, 191, 188);
 border-radius:5px;
 height: 50px;</string>
+        </property>
+        <property name="inputMask">
+         <string>99 999 999</string>
+        </property>
+        <property name="placeholderText">
+         <string/>
         </property>
        </widget>
       </item>
@@ -196,12 +208,15 @@ height: 50px;</string>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="tel">
+       <widget class="QLineEdit" name="cr">
         <property name="styleSheet">
          <string notr="true">color:rgb(0, 0, 0);
 border:  0.5px solid rgb(192, 191, 188);
 border-radius:5px;
 height:50px;</string>
+        </property>
+        <property name="placeholderText">
+         <string/>
         </property>
        </widget>
       </item>

@@ -197,6 +197,12 @@ QPushButton:hover{
 border:  0.5px solid rgb(192, 191, 188);
 border-radius:5px;</string>
       </property>
+      <property name="inputMask">
+       <string>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</string>
+      </property>
+      <property name="maxLength">
+       <number>73</number>
+      </property>
      </widget>
     </item>
     <item row="1" column="2">
@@ -205,6 +211,9 @@ border-radius:5px;</string>
        <string notr="true">color:rgb(0, 0, 0);
 border:  0.5px solid rgb(192, 191, 188);
 border-radius:5px;</string>
+      </property>
+      <property name="inputMask">
+       <string>99</string>
       </property>
      </widget>
     </item>
@@ -236,6 +245,9 @@ border-radius:5px;</string>
 border:  0.5px solid rgb(192, 191, 188);
 border-radius:5px;</string>
       </property>
+      <property name="inputMask">
+       <string>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</string>
+      </property>
      </widget>
     </item>
     <item row="4" column="0">
@@ -251,6 +263,9 @@ border-radius:5px;</string>
        <string notr="true">color:rgb(0, 0, 0);
 border:  0.5px solid rgb(192, 191, 188);
 border-radius:5px;</string>
+      </property>
+      <property name="inputMask">
+       <string>99 999 999</string>
       </property>
      </widget>
     </item>
@@ -268,6 +283,9 @@ border-radius:5px;</string>
 border:  0.5px solid rgb(192, 191, 188);
 border-radius:5px;</string>
       </property>
+      <property name="inputMask">
+       <string>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</string>
+      </property>
      </widget>
     </item>
     <item row="3" column="0">
@@ -276,6 +294,9 @@ border-radius:5px;</string>
        <string notr="true">color:rgb(0, 0, 0);
 border:  0.5px solid rgb(192, 191, 188);
 border-radius:5px;</string>
+      </property>
+      <property name="inputMask">
+       <string>99 999 999</string>
       </property>
      </widget>
     </item>
@@ -313,6 +334,9 @@ border-radius:5px;</string>
        <string notr="true">color:rgb(0, 0, 0);
 border:  0.5px solid rgb(192, 191, 188);
 border-radius:5px;</string>
+      </property>
+      <property name="inputMask">
+       <string/>
       </property>
      </widget>
     </item>

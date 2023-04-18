@@ -38,7 +38,6 @@ class MainWindow(QMainWindow):
         #fdsfsdfdsfsdf
     # Set the central widget to the stacked widget
         self.setCentralWidget(self.stack)
-        
         # Mise à jour menu  
         self.actionAjouter.triggered.connect(lambda: self.openPage(self.Ajouter))
         self.actionTel.triggered.connect(lambda: self.openModifier("Téléphone","Tel"))
@@ -100,7 +99,7 @@ class MainWindow(QMainWindow):
         self.MiseAJour.setEnabled(True)
         self.actionEPersonne.setEnabled(True)
         self.actionRPersonne.setEnabled(False)
-        MessageBox("On a récupéré l'information situé dans le fichier personnes.csv")
+        MessageBox("Opération a été un succès","On a récupéré l'information situé dans le fichier personnes.csv","info")
     
     def EPersonne(self):
         with open(os.path.dirname(__file__)+"/assets/data/personnes.csv", mode="w") as file:
