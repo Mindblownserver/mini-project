@@ -5,8 +5,11 @@ class MessageBox(QMessageBox):
         super().__init__()
         self.setWindowTitle("Projet Corona")
         self.setText(title)
-        self.setIcon(QMessageBox.Information if cr == "info" else QMessageBox.warning)
-        self.setDefaultButton(QMessageBox.Retry)
         self.setInformativeText(info)
-#        self.setDetailedText("details")
-        self.exec_() 
+        icon = self.Information
+        if(cr!="info"):
+            self.setStandardButtons(QMessageBox.No | QMessageBox.Yes)
+            self.setDefaultButton(QMessageBox.No)
+            icon = self.Warning
+        self.setIcon(icon)       
+#  self.setDetailedText("details")

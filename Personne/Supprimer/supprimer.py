@@ -1,7 +1,7 @@
 from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QWidget
 from PyQt5.QtCore import QModelIndex
-#from assets.widgets.messageBox import MessageBox
+from assets.widgets.messageBox import MessageBox
 import os
 
 class SupprimerPage(QWidget):
@@ -13,8 +13,8 @@ class SupprimerPage(QWidget):
         loadUi(ui_file, self)
         self.infoPers.hide()
         self.showData(personnes)
-        self.list.itemDoubleClicked.connect(lambda item: self.showPersonne(item,personnes))
         self.suppBtn.clicked.connect(lambda: self.deletePersonne(personnes))
+        self.list.itemDoubleClicked.connect(lambda item: self.showPersonne(item,personnes))
         self.returnBtn.clicked.connect(self.goHome)
         self.show()
     
@@ -42,7 +42,12 @@ class SupprimerPage(QWidget):
     def deletePersonne(self,personnes):
         cin = self.CIN.text()
         index = self.lCIN.index(cin)
-        self.lCIN.pop(index)
-        personnes.pop(index)
-        self.list.removeItemWidget(self.list.itemFromIndex(index)) # problem here
-        self.goHome()
+        msg =MessageBox("Êtes vous sûre de l'opèration?","Tu vas perdre les données du patient {} {}".format(personnes[index]["Prenom"],personnes[index]["Nom"]),"critique")
+        msg.buttonClicked.connect(lambda btn: self.popupBtn(btn,index,personnes))
+        msg.exec_() 
+    def popupBtn(self,btn,index,personnes):
+        print(btn.text())
+        if btn.text()[1:] == "Yes":
+            self.lCIN.pop(index)
+            personnes.pop(index)
+            self.list.takeItem(index) # problem here

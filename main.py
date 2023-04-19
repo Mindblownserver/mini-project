@@ -99,8 +99,8 @@ class MainWindow(QMainWindow):
         self.MiseAJour.setEnabled(True)
         self.actionEPersonne.setEnabled(True)
         self.actionRPersonne.setEnabled(False)
-        MessageBox("Opération a été un succès","On a récupéré l'information situé dans le fichier personnes.csv","info")
-    
+        msg = MessageBox("Opération a été un succès","On a récupéré l'information situé dans le fichier personnes.csv","info")
+        msg.exec_() 
     def EPersonne(self):
         with open(os.path.dirname(__file__)+"/assets/data/personnes.csv", mode="w") as file:
             headers = [k for k in self.personnes[0].keys()]
