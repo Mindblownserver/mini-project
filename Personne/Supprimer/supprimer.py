@@ -1,6 +1,5 @@
 from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QWidget
-from PyQt5.QtCore import QModelIndex
 from assets.widgets.messageBox import MessageBox
 import os
 
@@ -50,4 +49,4 @@ class SupprimerPage(QWidget):
         if btn.text()[1:] == "Yes":
             self.lCIN.pop(index)
             personnes.pop(index)
-            self.list.takeItem(index) # problem here
+            self.list.takeItem(index)

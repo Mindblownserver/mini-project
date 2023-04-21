@@ -30,8 +30,8 @@ font: 25 15pt &quot;URW Bookman&quot;;</string>
   <widget class="QLabel" name="titre">
    <property name="geometry">
     <rect>
-     <x>30</x>
-     <y>70</y>
+     <x>90</x>
+     <y>20</y>
      <width>241</width>
      <height>41</height>
     </rect>
@@ -39,7 +39,7 @@ font: 25 15pt &quot;URW Bookman&quot;;</string>
    <property name="font">
     <font>
      <family>URW Gothic</family>
-     <pointsize>22</pointsize>
+     <pointsize>19</pointsize>
      <weight>8</weight>
      <italic>false</italic>
      <bold>false</bold>
@@ -47,7 +47,7 @@ font: 25 15pt &quot;URW Bookman&quot;;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">color:rgb(28, 113, 216);
-font: 63 22pt &quot;URW Gothic&quot;;</string>
+font: 63 19pt &quot;URW Gothic&quot;;</string>
    </property>
    <property name="text">
     <string>Ajouter personne</string>

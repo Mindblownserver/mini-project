@@ -3,6 +3,7 @@ from Personne.modifer.modifier import ModifierPage
 from Personne.Afficher.afficherTout import AfficherWindow
 from Personne.Ajouter.ajouter import AjouterPage
 from Personne.Supprimer.supprimer import SupprimerPage  
+from Personne.Supprimer.supprimerTout import SupprimerToutPage
 from assets.widgets.messageBox import MessageBox
 from PyQt5.uic import loadUi
 import os
@@ -39,10 +40,16 @@ class MainWindow(QMainWindow):
     # Set the central widget to the stacked widget
         self.setCentralWidget(self.stack)
         # Mise à jour menu  
+        ## Ajouter
         self.actionAjouter.triggered.connect(lambda: self.openPage(self.Ajouter))
+        ## Modifier
         self.actionTel.triggered.connect(lambda: self.openModifier("Téléphone","Tel"))
         self.actionAdresse.triggered.connect(lambda: self.openModifier("Adresse","Adresse"))
+        ## Supprimer
         self.actionSuppPers.triggered.connect(lambda: self.openSupprimer())
+        self.actionSuppNat.triggered.connect(lambda: self.openSupprimer("une Nationalité"))
+        self.actionSuppInd.triggered.connect(lambda: self.openSupprimer("un Indicatif"))
+        ## Récuperer & Enregistrer
         self.actionRPersonne.triggered.connect(self.RPersonne)
         self.actionEPersonne.triggered.connect(self.EPersonne)
         # Recherche & afficher menu
@@ -59,12 +66,11 @@ class MainWindow(QMainWindow):
         self.stack.addWidget(self.Afficher)
         self.openPage(self.Afficher)
     
-    def openSupprimer(self,msg=""):
-        print("msg:",msg)
-        if(msg==""):
+    def openSupprimer(self,cr=""):
+        if(cr==""):
             self.Supprimer = SupprimerPage(self.personnes)
         else:
-            pass
+            self.Supprimer = SupprimerToutPage(self.personnes, cr)
         self.stack.addWidget(self.Supprimer)
         self.openPage(self.Supprimer)
     

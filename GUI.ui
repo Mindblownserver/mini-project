@@ -44,8 +44,8 @@
        <string>Supprimer personne</string>
       </property>
       <addaction name="actionSuppPers"/>
-      <addaction name="actionSuppression_des_personnes_d_une_nationalit_donn"/>
-      <addaction name="actionSuppression_des_personnes_d_un_indicatif_donn"/>
+      <addaction name="actionSuppNat"/>
+      <addaction name="actionSuppInd"/>
      </widget>
      <widget class="QMenu" name="menuModifier_personne">
       <property name="title">
@@ -137,12 +137,12 @@
     <string>Suppression personne donné</string>
    </property>
   </action>
-  <action name="actionSuppression_des_personnes_d_une_nationalit_donn">
+  <action name="actionSuppNat">
    <property name="text">
     <string>Suppression des personnes d'une nationalité donné</string>
    </property>
   </action>
-  <action name="actionSuppression_des_personnes_d_un_indicatif_donn">
+  <action name="actionSuppInd">
    <property name="text">
     <string>Suppression des personnes d'un indicatif donné</string>
    </property>
