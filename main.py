@@ -100,7 +100,7 @@ class MainWindow(QMainWindow):
                         "Mois": row[7],
                         "Annee": row[8],
                         "Decede": row[9],
-                        "Adresse": row[10]
+                        "Adresse": row[10],
                     })
         self.MiseAJour.setEnabled(True)
         self.actionEPersonne.setEnabled(True)
