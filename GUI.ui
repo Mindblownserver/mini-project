@@ -69,8 +69,8 @@
      <addaction name="actionRechercheDecede"/>
      <addaction name="actionRechercheNonDecede"/>
     </widget>
-    <addaction name="menuMise_jour_des_personnes"/>
     <addaction name="menuRecherche_affichage"/>
+    <addaction name="menuMise_jour_des_personnes"/>
    </widget>
    <widget class="QMenu" name="Gestion">
     <property name="title">
@@ -101,8 +101,8 @@
      <addaction name="actionRecherche_le_pourcentage_de_chaque_maladie"/>
      <addaction name="actionRecherche_maladies_de_chaque_personne"/>
     </widget>
-    <addaction name="menuMise_jour_2"/>
     <addaction name="menuRecherche_affichage_2"/>
+    <addaction name="menuMise_jour_2"/>
    </widget>
    <widget class="QMenu" name="Calcul">
     <property name="title">
@@ -117,10 +117,8 @@
     <property name="title">
      <string>Enregistrement et récupération</string>
     </property>
-    <addaction name="actionEPersonne"/>
-    <addaction name="actionRPersonne"/>
-    <addaction name="actionEnregistrement_fichier_maladies"/>
-    <addaction name="actionR_cup_ration_fichier_maladies"/>
+    <addaction name="actionEnre"/>
+    <addaction name="actionRecu"/>
    </widget>
    <addaction name="MiseAJour"/>
    <addaction name="Gestion"/>
@@ -252,14 +250,14 @@
     <string>Personnes à risque</string>
    </property>
   </action>
-  <action name="actionEPersonne">
+  <action name="actionEnre">
    <property name="text">
-    <string>Enregistrement fichier personnes</string>
+    <string>Enregistrement TOUT</string>
    </property>
   </action>
-  <action name="actionRPersonne">
+  <action name="actionRecu">
    <property name="text">
-    <string>Récupération fichier personnes</string>
+    <string>Récupération TOUT</string>
    </property>
   </action>
   <action name="actionEnregistrement_fichier_maladies">

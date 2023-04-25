@@ -8,6 +8,9 @@ class AjouterPage(QWidget):
         path = os.path.dirname(__file__)+"/"
         ui_file = path+"ajouter.ui"
         loadUi(ui_file,self)
+        self.cin=list()
+        self.tel=list()
+        self.loadCle(personnes)
         self.returnBtn.clicked.connect(self.goHome)
         self.ajouterBtn.clicked.connect(lambda : self.ajouter(personnes=personnes))
         self.generate.clicked.connect(lambda: self.generer(personnes))
@@ -15,6 +18,10 @@ class AjouterPage(QWidget):
         self.show()
     def goHome(self):
         self.parent().setCurrentIndex(0)
+    def loadCle(self,personnes):
+        for personne in personnes:
+            self.cin.append(personne["CIN"])
+            self.tel.append(personne["Tel"])
     def ajouter(self,personnes):
         #Enregistrer le dictionnaire
         nom = self.Lnom.text()
@@ -28,8 +35,11 @@ class AjouterPage(QWidget):
         day,month,year = date[0],date[1],date[2]
         decede = "1" if self.dead.isChecked() else "0"
         if(nat ==""or nom=="" or prenom=="" or age=="" or tel=="" or cin=="" or adr=="" or len(date)==0):
-            msg =MessageBox("Il ya une insuffisance des données","Veuillez vérifier les données que vous avez mis","info")
+            msg =MessageBox("Il ya une insuffisance des données","Veuillez vérifier les données que vous avez mis","error")
             msg.exec_() 
+        elif(cin in self.cin or tel in self.tel):
+            msg =MessageBox("Il ya une ambiguité des données","Votre CIN ou numéro du téléphone est déjà enrgegistré dans la base de données","error")
+            msg.exec_()
         else:
             try:
                 personnes.append({
@@ -58,7 +68,7 @@ class AjouterPage(QWidget):
                 "CIN": "13213423",
                 "Nom": "Kharrat",
                 "Prenom": "Mohamed Yassine",
-                "Tel": "8765434",
+                "Tel": "87 654 345",
                 "Nationalite": "Tun",
                 "Age": "42",
                 "Jour": "12",

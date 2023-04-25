@@ -6,33 +6,45 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1007</width>
-    <height>554</height>
+    <width>1058</width>
+    <height>548</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_4">
-   <item>
-    <widget class="QFrame" name="frame_5">
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item alignment="Qt::AlignTop">
+    <widget class="QFrame" name="frame_6">
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>200</height>
+      </size>
+     </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_3">
+     <layout class="QVBoxLayout" name="verticalLayout_4">
       <item>
-       <widget class="QFrame" name="frame_6">
-        <property name="minimumSize">
+       <widget class="QFrame" name="frame_3">
+        <property name="maximumSize">
          <size>
-          <width>100</width>
-          <height>50</height>
+          <width>16777215</width>
+          <height>60</height>
          </size>
         </property>
         <property name="frameShape">
-         <enum>QFrame::NoFrame</enum>
+         <enum>QFrame::StyledPanel</enum>
         </property>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
@@ -40,7 +52,7 @@
         <widget class="QPushButton" name="returnBtn">
          <property name="geometry">
           <rect>
-           <x>0</x>
+           <x>-10</x>
            <y>0</y>
            <width>51</width>
            <height>54</height>
@@ -85,26 +97,32 @@
           <bool>true</bool>
          </property>
         </widget>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="titre">
-        <property name="font">
-         <font>
-          <family>URW Gothic</family>
-          <pointsize>22</pointsize>
-          <weight>8</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color:rgb(28, 113, 216);
-font: 63 22pt &quot;URW Gothic&quot;;</string>
-        </property>
-        <property name="text">
-         <string>Modifier personne</string>
-        </property>
+        <widget class="QLabel" name="titre">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>0</y>
+           <width>971</width>
+           <height>56</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>URW Gothic</family>
+           <pointsize>18</pointsize>
+           <weight>8</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:rgb(28, 113, 216);
+font: 63 18pt &quot;URW Gothic&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Modifier personne</string>
+         </property>
+        </widget>
        </widget>
       </item>
       <item>
@@ -117,7 +135,7 @@ font: 63 22pt &quot;URW Gothic&quot;;</string>
      </layout>
     </widget>
    </item>
-   <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
+   <item>
     <widget class="QFrame" name="frame">
      <property name="minimumSize">
       <size>
@@ -127,7 +145,7 @@ font: 63 22pt &quot;URW Gothic&quot;;</string>
      </property>
      <property name="maximumSize">
       <size>
-       <width>16777215</width>
+       <width>300</width>
        <height>80</height>
       </size>
      </property>
@@ -169,7 +187,7 @@ border-radius:5px;
 height: 50px;</string>
         </property>
         <property name="inputMask">
-         <string>99 999 999</string>
+         <string>99999999</string>
         </property>
         <property name="placeholderText">
          <string/>
@@ -179,7 +197,7 @@ height: 50px;</string>
      </layout>
     </widget>
    </item>
-   <item alignment="Qt::AlignLeft">
+   <item>
     <widget class="QFrame" name="frame_2">
      <property name="minimumSize">
       <size>
@@ -189,7 +207,7 @@ height: 50px;</string>
      </property>
      <property name="maximumSize">
       <size>
-       <width>16777215</width>
+       <width>300</width>
        <height>80</height>
       </size>
      </property>

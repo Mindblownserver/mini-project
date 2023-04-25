@@ -7,9 +7,12 @@ class MessageBox(QMessageBox):
         self.setText(title)
         self.setInformativeText(info)
         icon = self.Information
-        if(cr!="info"):
+        if(cr=="error"):
+            icon = self.critical
+        elif(cr!="info"):
             self.setStandardButtons(QMessageBox.No | QMessageBox.Yes)
             self.setDefaultButton(QMessageBox.No)
             icon = self.Warning
         self.setIcon(icon)       
+        
 #  self.setDetailedText("details")

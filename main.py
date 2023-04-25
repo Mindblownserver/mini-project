@@ -25,11 +25,13 @@ class MainWindow(QMainWindow):
         ui_file = path+"GUI.ui"
         loadUi(ui_file, self)
         self.personnes = list(dict())
+        self.maladies=list(dict())
+        self.nomMaladies = set()
         self.stack = QStackedWidget(self)
         self.MiseAJour.setEnabled(False)
         self.Gestion.setEnabled(False)
         self.Calcul.setEnabled(False)
-        self.actionEPersonne.setEnabled(False)
+        self.actionEnre.setEnabled(False)
         # Pages
         self.Home = HomePage()
         self.Ajouter = AjouterPage(self.personnes)
@@ -50,8 +52,8 @@ class MainWindow(QMainWindow):
         self.actionSuppNat.triggered.connect(lambda: self.openSupprimer("une Nationalité"))
         self.actionSuppInd.triggered.connect(lambda: self.openSupprimer("un Indicatif"))
         ## Récuperer & Enregistrer
-        self.actionRPersonne.triggered.connect(self.RPersonne)
-        self.actionEPersonne.triggered.connect(self.EPersonne)
+        self.actionRecu.triggered.connect(self.Recuperation)
+        self.actionEnre.triggered.connect(self.Enregistrement)
         # Recherche & afficher menu
         self.actionAfficher.triggered.connect(lambda :self.openAfficher("Fiche des personnes malades","Tout"))
         self.actionRechercheTel.triggered.connect(lambda :self.openAfficher("Recherche par numéro du Téléphone","Tel"))
@@ -74,7 +76,6 @@ class MainWindow(QMainWindow):
         self.stack.addWidget(self.Supprimer)
         self.openPage(self.Supprimer)
     
-
     def openModifier(self,msg,cr):
         self.Modifier = ModifierPage(self.personnes,msg,cr)
         self.stack.addWidget(self.Modifier)
@@ -82,6 +83,23 @@ class MainWindow(QMainWindow):
 
     def openPage(self, page):
         self.stack.setCurrentWidget(page)
+    
+    def Recuperation(self):
+        self.RPersonne()
+        self.RMaladies()
+        self.Gestion.setEnabled(True)
+        self.MiseAJour.setEnabled(True)
+        self.actionEnre.setEnabled(True)
+        self.actionRecu.setEnabled(False)
+        self.Calcul.setEnabled(True)
+        msg = MessageBox("Opération a été un succès","On a récupéré l'information situé dans le fichier personnes.csv","info")
+        msg.exec_() 
+
+    def Enregistrement(self):
+        self.EPersonne()
+        self.EMaladies()
+        msg = MessageBox("Opération a été un succès","On a enregistré l'information dans le fichier personnes.csv","info")
+        msg.exec_() 
     
     def RPersonne(self):
         self.personnes.clear()
@@ -102,17 +120,34 @@ class MainWindow(QMainWindow):
                         "Decede": row[9],
                         "Adresse": row[10],
                     })
-        self.MiseAJour.setEnabled(True)
-        self.actionEPersonne.setEnabled(True)
-        self.actionRPersonne.setEnabled(False)
-        msg = MessageBox("Opération a été un succès","On a récupéré l'information situé dans le fichier personnes.csv","info")
-        msg.exec_() 
+        
     def EPersonne(self):
         with open(os.path.dirname(__file__)+"/assets/data/personnes.csv", mode="w") as file:
             headers = [k for k in self.personnes[0].keys()]
             writer = csv.DictWriter(file,fieldnames=headers)
             writer.writeheader()
             writer.writerows(self.personnes)
+          
+    def RMaladies(self):
+        self.personnes.clear()
+        with open(os.getcwd()+"/assets/data/maladies.csv") as file:
+            reader = csv.reader(file, delimiter=",")
+            for i, row in enumerate(reader):
+                if i != 0:
+                    self.maladies.append({
+                        "Code": row[0],
+                        "CIN": row[1],
+                        "Maladie": row[2],
+                        "nbrAn": row[3],
+                    })
+                    self.nomMaladies.add(row[2])
+        
+    def EMaladies(self):
+        with open(os.path.dirname(__file__)+"/assets/data/maladies.csv", mode="w") as file:
+            headers = [k for k in self.maladies[0].keys()]
+            writer = csv.DictWriter(file,fieldnames=headers)
+            writer.writeheader()
+            writer.writerows(self.maladies)
 if __name__ == '__main__':
     app = QApplication([])
     window = MainWindow()

@@ -82,6 +82,23 @@
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="text">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>10</y>
+        <width>972</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(28, 113, 216);
+font: 63 18pt &quot;URW Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Supprimer Personnes</string>
+      </property>
+     </widget>
     </widget>
    </item>
    <item>
@@ -105,17 +122,6 @@
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QLabel" name="text">
-        <property name="styleSheet">
-         <string notr="true">color:rgb(28, 113, 216);
-font: 63 22pt &quot;URW Gothic&quot;;</string>
-        </property>
-        <property name="text">
-         <string>Supprimer Personnes</string>
-        </property>
-       </widget>
-      </item>
       <item>
        <widget class="Line" name="line">
         <property name="orientation">

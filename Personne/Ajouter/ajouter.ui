@@ -24,7 +24,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: rgb(192, 191, 188);
+   <string notr="true">color: rgb(61, 56, 70);
 font: 25 15pt &quot;URW Bookman&quot;;</string>
   </property>
   <widget class="QLabel" name="titre">
@@ -39,7 +39,7 @@ font: 25 15pt &quot;URW Bookman&quot;;</string>
    <property name="font">
     <font>
      <family>URW Gothic</family>
-     <pointsize>19</pointsize>
+     <pointsize>18</pointsize>
      <weight>8</weight>
      <italic>false</italic>
      <bold>false</bold>
@@ -47,7 +47,7 @@ font: 25 15pt &quot;URW Bookman&quot;;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">color:rgb(28, 113, 216);
-font: 63 19pt &quot;URW Gothic&quot;;</string>
+font: 63 18pt &quot;URW Gothic&quot;;</string>
    </property>
    <property name="text">
     <string>Ajouter personne</string>
@@ -296,7 +296,19 @@ border:  0.5px solid rgb(192, 191, 188);
 border-radius:5px;</string>
       </property>
       <property name="inputMask">
-       <string>99 999 999</string>
+       <string notr="true">00000000</string>
+      </property>
+      <property name="text">
+       <string notr="true"/>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Normal</enum>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+      <property name="cursorMoveStyle">
+       <enum>Qt::LogicalMoveStyle</enum>
       </property>
      </widget>
     </item>
