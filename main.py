@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QWidget,QApplication, QMainWindow,QStackedWidget
 from Personne.modifer.modifier import ModifierPage
 from Personne.Afficher.afficherTout import AfficherWindow
+from Maladie.Afficher.afficher import MAfficherPage
 from Personne.Ajouter.ajouter import AjouterPage
 from Personne.Supprimer.supprimer import SupprimerPage  
 from Personne.Supprimer.supprimerTout import SupprimerToutPage
@@ -52,21 +53,31 @@ class MainWindow(QMainWindow):
         self.actionSuppNat.triggered.connect(lambda: self.openSupprimer("une Nationalité"))
         self.actionSuppInd.triggered.connect(lambda: self.openSupprimer("un Indicatif"))
         ## Récuperer & Enregistrer
-        self.actionRecu.triggered.connect(self.Recuperation)
-        self.actionEnre.triggered.connect(self.Enregistrement)
+        self.actionRecu.triggered.connect(self.recuperation)
+        self.actionEnre.triggered.connect(self.enregistrement)
         # Recherche & afficher menu
         self.actionAfficher.triggered.connect(lambda :self.openAfficher("Fiche des personnes malades","Tout"))
+        self.actionAffMaladie.triggered.connect(lambda: self.openAfficherMaladie("Fiche des maladies","Tout"))
         self.actionRechercheTel.triggered.connect(lambda :self.openAfficher("Recherche par numéro du Téléphone","Tel"))
         self.actionRechercheInd.triggered.connect(lambda :self.openAfficher("Recherche par indicatif","indi"))
         self.actionRechercheNat.triggered.connect(lambda :self.openAfficher("Recherche par nationalité","Nationalite"))
         self.actionRechercheDecede.triggered.connect(lambda :self.openAfficher("Recherche des personnes décédés par leurs numéro du téléphone", "Tel","1"))
         self.actionRechercheNonDecede.triggered.connect(lambda :self.openAfficher("Recherche des personnes non décédés par leurs numéro du téléphone","Tel","0"))
-         
+        self.actionRechercheMal.triggered.connect(lambda: self.openAfficherMaladie("Recherche par une maladie","nom 0")) 
+        self.actionRechercheMalPerc.triggered.connect(lambda: self.openAfficherMaladie("Recherche par une maladie","nom 1"))
+        self.actionRecherchePers.triggered.connect(lambda: self.openAfficherMaladie("Recherche les maladies d'une personne par CIN","CIN"))
         self.show()
+    
     def openAfficher(self,msg,cr,st=""):
         self.Afficher = AfficherWindow(self.personnes,msg,cr,st)
         self.stack.addWidget(self.Afficher)
         self.openPage(self.Afficher)
+
+    def openAfficherMaladie(self,msg,cr):
+        taille = len(self.maladies) if cr.split()[-1] != "1" else len(self.nomMaladies)
+        self.MAfficher = MAfficherPage(self.maladies,taille,list(self.nomMaladies),msg,cr)
+        self.stack.addWidget(self.MAfficher)
+        self.openPage(self.MAfficher)
     
     def openSupprimer(self,cr=""):
         if(cr==""):
@@ -84,9 +95,9 @@ class MainWindow(QMainWindow):
     def openPage(self, page):
         self.stack.setCurrentWidget(page)
     
-    def Recuperation(self):
-        self.RPersonne()
+    def recuperation(self):
         self.RMaladies()
+        self.RPersonne()
         self.Gestion.setEnabled(True)
         self.MiseAJour.setEnabled(True)
         self.actionEnre.setEnabled(True)
@@ -95,14 +106,13 @@ class MainWindow(QMainWindow):
         msg = MessageBox("Opération a été un succès","On a récupéré l'information situé dans le fichier personnes.csv","info")
         msg.exec_() 
 
-    def Enregistrement(self):
+    def enregistrement(self):
         self.EPersonne()
         self.EMaladies()
         msg = MessageBox("Opération a été un succès","On a enregistré l'information dans le fichier personnes.csv","info")
         msg.exec_() 
     
     def RPersonne(self):
-        self.personnes.clear()
         with open(os.getcwd()+"/assets/data/personnes.csv") as file:
             reader = csv.reader(file, delimiter=",")
             for i, row in enumerate(reader):
@@ -120,7 +130,7 @@ class MainWindow(QMainWindow):
                         "Decede": row[9],
                         "Adresse": row[10],
                     })
-        
+        print(self.personnes)
     def EPersonne(self):
         with open(os.path.dirname(__file__)+"/assets/data/personnes.csv", mode="w") as file:
             headers = [k for k in self.personnes[0].keys()]
@@ -129,7 +139,6 @@ class MainWindow(QMainWindow):
             writer.writerows(self.personnes)
           
     def RMaladies(self):
-        self.personnes.clear()
         with open(os.getcwd()+"/assets/data/maladies.csv") as file:
             reader = csv.reader(file, delimiter=",")
             for i, row in enumerate(reader):
@@ -142,6 +151,7 @@ class MainWindow(QMainWindow):
                     })
                     self.nomMaladies.add(row[2])
         
+                
     def EMaladies(self):
         with open(os.path.dirname(__file__)+"/assets/data/maladies.csv", mode="w") as file:
             headers = [k for k in self.maladies[0].keys()]

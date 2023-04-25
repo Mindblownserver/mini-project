@@ -38,6 +38,7 @@ class AfficherWindow(QWidget):
                 self.table.setItem(row, 9, QTableWidgetItem(personne["Decede"])) 
             else:
                 cp-=1
+    
     def goHome(self):
         self.parent().setCurrentIndex(0)
 

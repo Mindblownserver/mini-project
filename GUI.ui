@@ -95,10 +95,10 @@
      <property name="title">
       <string>Recherche et affichage</string>
      </property>
-     <addaction name="actionContenu_du_dictionnaire_maladie"/>
-     <addaction name="actionRecherche_par_une_maladie"/>
-     <addaction name="actionRecherche_maladies_d_une_personne"/>
-     <addaction name="actionRecherche_le_pourcentage_de_chaque_maladie"/>
+     <addaction name="actionAffMaladie"/>
+     <addaction name="actionRechercheMal"/>
+     <addaction name="actionRecherchePers"/>
+     <addaction name="actionRechercheMalPerc"/>
      <addaction name="actionRecherche_maladies_de_chaque_personne"/>
     </widget>
     <addaction name="menuRecherche_affichage_2"/>
@@ -205,22 +205,22 @@
     <string>Modifer décès</string>
    </property>
   </action>
-  <action name="actionContenu_du_dictionnaire_maladie">
+  <action name="actionAffMaladie">
    <property name="text">
     <string>Contenu du dictionnaire maladie</string>
    </property>
   </action>
-  <action name="actionRecherche_par_une_maladie">
+  <action name="actionRechercheMal">
    <property name="text">
     <string>Recherche par une maladie</string>
    </property>
   </action>
-  <action name="actionRecherche_maladies_d_une_personne">
+  <action name="actionRecherchePers">
    <property name="text">
     <string>Recherche maladies d'une personne</string>
    </property>
   </action>
-  <action name="actionRecherche_le_pourcentage_de_chaque_maladie">
+  <action name="actionRechercheMalPerc">
    <property name="text">
     <string>Recherche le pourcentage de chaque maladie</string>
    </property>
