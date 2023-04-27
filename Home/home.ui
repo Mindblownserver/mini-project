@@ -100,7 +100,7 @@ color: white;
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../assets/icons/bg.jpeg</pixmap>
+    <pixmap>../assets/icons/bg.png</pixmap>
    </property>
   </widget>
   <zorder>label_3</zorder>

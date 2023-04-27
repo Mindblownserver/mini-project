@@ -1,6 +1,9 @@
 <RCC>
   <qresource prefix="icons">
+    <file>bg.png</file>
     <file>user-regular.svg</file>
+    <file>up.png</file>
+    <file>down.png</file>
     <file>returnOff.svg</file>
     <file>returnOn.svg</file>
     <file>arrow-left-solid.svg</file>

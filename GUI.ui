@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>941</width>
+    <width>1213</width>
     <height>717</height>
    </rect>
   </property>
@@ -16,6 +16,9 @@
   <property name="windowIcon">
    <iconset>
     <normaloff>assets/icons/CoronaOn.png</normaloff>assets/icons/CoronaOn.png</iconset>
+  </property>
+  <property name="toolTip">
+   <string/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="contextMenuPolicy">
@@ -27,7 +30,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>941</width>
+     <width>1213</width>
      <height>22</height>
     </rect>
    </property>
@@ -55,8 +58,9 @@
       <addaction name="actionAdresse"/>
      </widget>
      <addaction name="actionAjouter"/>
-     <addaction name="menuSupprimer_personne"/>
      <addaction name="menuModifier_personne"/>
+     <addaction name="separator"/>
+     <addaction name="menuSupprimer_personne"/>
     </widget>
     <widget class="QMenu" name="menuRecherche_affichage">
      <property name="title">
@@ -87,9 +91,10 @@
       <addaction name="actionNombre_d_ann_es"/>
       <addaction name="actionModifer_d_c_s"/>
      </widget>
-     <addaction name="actionAjouter_une_nouvelle_maladie"/>
-     <addaction name="actionSupprimer_une_maladie"/>
+     <addaction name="actionAjMal"/>
      <addaction name="menuModifier_les_donn_es_d_une_maladie"/>
+     <addaction name="separator"/>
+     <addaction name="actionSupprimer_une_maladie"/>
     </widget>
     <widget class="QMenu" name="menuRecherche_affichage_2">
      <property name="title">
@@ -99,7 +104,7 @@
      <addaction name="actionRechercheMal"/>
      <addaction name="actionRecherchePers"/>
      <addaction name="actionRechercheMalPerc"/>
-     <addaction name="actionRecherche_maladies_de_chaque_personne"/>
+     <addaction name="actionRechercheMalPers"/>
     </widget>
     <addaction name="menuRecherche_affichage_2"/>
     <addaction name="menuMise_jour_2"/>
@@ -185,7 +190,7 @@
     <string>Recherche par des personnes non décédés</string>
    </property>
   </action>
-  <action name="actionAjouter_une_nouvelle_maladie">
+  <action name="actionAjMal">
    <property name="text">
     <string>Ajouter une nouvelle maladie</string>
    </property>
@@ -225,7 +230,7 @@
     <string>Recherche le pourcentage de chaque maladie</string>
    </property>
   </action>
-  <action name="actionRecherche_maladies_de_chaque_personne">
+  <action name="actionRechercheMalPers">
    <property name="text">
     <string>Recherche maladies de chaque personne</string>
    </property>

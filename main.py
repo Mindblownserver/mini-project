@@ -1,10 +1,12 @@
 from PyQt5.QtWidgets import QWidget,QApplication, QMainWindow,QStackedWidget
 from Personne.modifer.modifier import ModifierPage
 from Personne.Afficher.afficherTout import AfficherWindow
-from Maladie.Afficher.afficher import MAfficherPage
 from Personne.Ajouter.ajouter import AjouterPage
 from Personne.Supprimer.supprimer import SupprimerPage  
 from Personne.Supprimer.supprimerTout import SupprimerToutPage
+from Maladie.Afficher.afficher import MAfficherPage
+from Maladie.Afficher.afficherPers import AfficherMaladiesPersonnesPage
+from Maladie.Ajouter.ajouter import MAjouterPage
 from assets.widgets.messageBox import MessageBox
 from PyQt5.uic import loadUi
 import os
@@ -36,6 +38,7 @@ class MainWindow(QMainWindow):
         # Pages
         self.Home = HomePage()
         self.Ajouter = AjouterPage(self.personnes)
+
         self.stack.addWidget(self.Home)
         self.stack.addWidget(self.Ajouter)
         self.stack.setContentsMargins(0,0,0,0)
@@ -45,6 +48,7 @@ class MainWindow(QMainWindow):
         # Mise à jour menu  
         ## Ajouter
         self.actionAjouter.triggered.connect(lambda: self.openPage(self.Ajouter))
+        self.actionAjMal.triggered.connect(lambda: self.openMaladie("ajouter"))
         ## Modifier
         self.actionTel.triggered.connect(lambda: self.openModifier("Téléphone","Tel"))
         self.actionAdresse.triggered.connect(lambda: self.openModifier("Adresse","Adresse"))
@@ -66,17 +70,27 @@ class MainWindow(QMainWindow):
         self.actionRechercheMal.triggered.connect(lambda: self.openAfficherMaladie("Recherche par une maladie","nom 0")) 
         self.actionRechercheMalPerc.triggered.connect(lambda: self.openAfficherMaladie("Recherche par une maladie","nom 1"))
         self.actionRecherchePers.triggered.connect(lambda: self.openAfficherMaladie("Recherche les maladies d'une personne par CIN","CIN"))
+        self.actionRechercheMalPers.triggered.connect(self.openAfficherMaladiePersonne)
+
         self.show()
     
+    def openMaladie(self,msg):
+        if(msg =="ajouter"):
+            self.page= MAjouterPage()
+        self.openPage(self.page)
+
+
     def openAfficher(self,msg,cr,st=""):
         self.Afficher = AfficherWindow(self.personnes,msg,cr,st)
-        self.stack.addWidget(self.Afficher)
+        self.openPage(self.Afficher)
+
+    def openAfficherMaladiePersonne(self):
+        self.Afficher = AfficherMaladiesPersonnesPage(self.maladies)
         self.openPage(self.Afficher)
 
     def openAfficherMaladie(self,msg,cr):
         taille = len(self.maladies) if cr.split()[-1] != "1" else len(self.nomMaladies)
         self.MAfficher = MAfficherPage(self.maladies,taille,list(self.nomMaladies),msg,cr)
-        self.stack.addWidget(self.MAfficher)
         self.openPage(self.MAfficher)
     
     def openSupprimer(self,cr=""):
@@ -84,15 +98,14 @@ class MainWindow(QMainWindow):
             self.Supprimer = SupprimerPage(self.personnes)
         else:
             self.Supprimer = SupprimerToutPage(self.personnes, cr)
-        self.stack.addWidget(self.Supprimer)
         self.openPage(self.Supprimer)
     
     def openModifier(self,msg,cr):
         self.Modifier = ModifierPage(self.personnes,msg,cr)
-        self.stack.addWidget(self.Modifier)
         self.openPage(self.Modifier)
 
     def openPage(self, page):
+        self.stack.addWidget(page)
         self.stack.setCurrentWidget(page)
     
     def recuperation(self):
@@ -130,7 +143,6 @@ class MainWindow(QMainWindow):
                         "Decede": row[9],
                         "Adresse": row[10],
                     })
-        print(self.personnes)
     def EPersonne(self):
         with open(os.path.dirname(__file__)+"/assets/data/personnes.csv", mode="w") as file:
             headers = [k for k in self.personnes[0].keys()]

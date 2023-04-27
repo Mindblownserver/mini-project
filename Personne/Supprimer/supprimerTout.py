@@ -12,7 +12,7 @@ class SupprimerToutPage(QWidget):
         loadUi(ui_file, self)
         self.cr = self.afficheMode(personnes,criteria)
         self.msg.setText(self.msg.text()+criteria+" donnée")
-        self.listeOp.itemDoubleClicked.connect(lambda item: self.showData(item,self.lCr))
+        self.listeOp.itemClicked.connect(lambda item: self.showData(item,self.lCr))
         self.returnBtn.clicked.connect(self.goHome)
         self.suppBtn.clicked.connect(lambda: self.deleteCr(personnes))
         self.show()
@@ -53,7 +53,6 @@ class SupprimerToutPage(QWidget):
         msg.exec_() 
 
     def popupBtn(self,btn,personnes):
-        print(btn.text())
         item = self.listeOp.currentItem()
         if btn.text()[1:] == "Yes":
             cp=0

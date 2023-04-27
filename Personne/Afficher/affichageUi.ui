@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1056</width>
+    <width>1213</width>
     <height>592</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -186,7 +189,7 @@ QPushButton:hover{
      </property>
      <property name="maximumSize">
       <size>
-       <width>1024</width>
+       <width>1172</width>
        <height>166677</height>
       </size>
      </property>
@@ -202,7 +205,28 @@ QPushButton:hover{
         <property name="enabled">
          <bool>true</bool>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QTableWidget {
+    selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                stop: 0 #4776E6, stop: 1 #8E54E9);
+}
+
+QTableWidget QTableCornerButton::section {
+    background: rgb(28, 113, 216);
+    border: 2px outset rgb(28, 113, 216);
+}
+
+QTableWidget::indicator:unchecked {
+    background-color: #d7d6d5
+}</string>
+        </property>
         <attribute name="horizontalHeaderCascadingSectionResizes">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="horizontalHeaderDefaultSectionSize">
+         <number>115</number>
+        </attribute>
+        <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
          <bool>false</bool>
         </attribute>
         <column>
@@ -262,6 +286,8 @@ QPushButton:hover{
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../assets/icons/background.qrc"/>
+ </resources>
  <connections/>
 </ui>

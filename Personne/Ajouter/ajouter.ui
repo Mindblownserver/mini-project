@@ -190,21 +190,6 @@ QPushButton:hover{
     <property name="horizontalSpacing">
      <number>119</number>
     </property>
-    <item row="1" column="0">
-     <widget class="QLineEdit" name="Lnom">
-      <property name="styleSheet">
-       <string notr="true">color:rgb(0, 0, 0);
-border:  0.5px solid rgb(192, 191, 188);
-border-radius:5px;</string>
-      </property>
-      <property name="inputMask">
-       <string>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</string>
-      </property>
-      <property name="maxLength">
-       <number>73</number>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="2">
      <widget class="QLineEdit" name="LAge">
       <property name="styleSheet">
@@ -305,7 +290,7 @@ border-radius:5px;</string>
        <enum>QLineEdit::Normal</enum>
       </property>
       <property name="cursorPosition">
-       <number>0</number>
+       <number>8</number>
       </property>
       <property name="cursorMoveStyle">
        <enum>Qt::LogicalMoveStyle</enum>
@@ -349,6 +334,21 @@ border-radius:5px;</string>
       </property>
       <property name="inputMask">
        <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLineEdit" name="Lnom">
+      <property name="styleSheet">
+       <string notr="true">color:rgb(0, 0, 0);
+border:  0.5px solid rgb(192, 191, 188);
+border-radius:5px;</string>
+      </property>
+      <property name="inputMask">
+       <string>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</string>
+      </property>
+      <property name="maxLength">
+       <number>73</number>
       </property>
      </widget>
     </item>
