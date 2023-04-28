@@ -76,7 +76,9 @@ class MainWindow(QMainWindow):
     
     def openMaladie(self,msg):
         if(msg =="ajouter"):
-            self.page= MAjouterPage()
+            cin=[personne["CIN"] for personne in self.personnes]
+            print(cin)
+            self.page= MAjouterPage(self.maladies,self.nomMaladies,cin)
         self.openPage(self.page)
 
 

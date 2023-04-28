@@ -186,6 +186,21 @@ QPushButton:hover{
         <property name="enabled">
          <bool>true</bool>
         </property>
+        <property name="styleSheet">
+         <string notr="true">QTableWidget {
+    selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                stop: 0 #4776E6, stop: 1 #8E54E9);
+}
+
+QTableWidget QTableCornerButton::section {
+    background: rgb(28, 113, 216);
+    border: 2px outset rgb(28, 113, 216);
+}
+
+QTableWidget::indicator:unchecked {
+    background-color: #d7d6d5
+}</string>
+        </property>
         <attribute name="horizontalHeaderCascadingSectionResizes">
          <bool>true</bool>
         </attribute>

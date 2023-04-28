@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QMessageBox
-
 class MessageBox(QMessageBox):
+    # cr can take error, info or other like a warning
     def __init__(self,title,info,cr):
         super().__init__()
         self.setWindowTitle("Projet Corona")
@@ -8,7 +8,7 @@ class MessageBox(QMessageBox):
         self.setInformativeText(info)
         icon = self.Information
         if(cr=="error"):
-            icon = self.critical
+            icon = self.Critical
         elif(cr!="info"):
             self.setStandardButtons(QMessageBox.No | QMessageBox.Yes)
             self.setDefaultButton(QMessageBox.No)
