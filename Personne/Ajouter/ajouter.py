@@ -3,14 +3,14 @@ from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QWidget,QApplication
 from assets.widgets.messageBox import *
 class AjouterPage(QWidget):
-    def __init__(self,personnes):
+    def __init__(self,personnes,cmp):
         super().__init__()
         path = os.path.dirname(__file__)+"/"
         ui_file = path+"ajouter.ui"
         loadUi(ui_file,self)
         self.cin=list()
         self.tel=list()
-        self.loadCle(personnes)
+        self.loadCle(personnes,cmp)
         self.returnBtn.clicked.connect(self.goHome)
         self.ajouterBtn.clicked.connect(lambda : self.ajouter(personnes=personnes))
         self.generate.clicked.connect(lambda: self.generer(personnes))
@@ -18,14 +18,18 @@ class AjouterPage(QWidget):
         self.show()
     def goHome(self):
         self.parent().setCurrentIndex(0)
-    def loadCle(self,personnes):
+    def loadCle(self,personnes,cmp):
         for personne in personnes:
             self.cin.append(personne["CIN"])
             self.tel.append(personne["Tel"])
+        # Information
+        if cmp == 0:
+            msg =MessageBox("Le caractére espace belle et bien existe!","Dans les champs 'Nom' et 'Prenom', Il suffit de mettre une lettre en majuscule pour insèrer l'espace entre ce dernier et le lettre en arrière ","info")
+            msg.exec_() 
     def ajouter(self,personnes):
         #Enregistrer le dictionnaire
-        nom = self.Lnom.text()
-        prenom = self.Lprenom.text()
+        nom = self.seperateWords(self.Lnom.text())
+        prenom = self.seperateWords(self.Lprenom.text())
         nat = self.LNat.text()
         age = self.LAge.text()
         tel = self.LTel.text()
@@ -78,7 +82,12 @@ class AjouterPage(QWidget):
                 "Adresse": "DSQDSQD"
             })
         self.goHome()
-if __name__ == "__main__":
-    app= QApplication([])
-    widget = AjouterPage()
-    app.exec_()
+
+    def seperateWords(self,text):
+        res=""
+        for char in text:
+            if(char.isupper()):
+                res+= " "+char
+            else:
+                res+=char
+        return res.lstrip() 

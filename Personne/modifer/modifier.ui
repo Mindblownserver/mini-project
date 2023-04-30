@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1058</width>
-    <height>548</height>
+    <height>512</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,7 +44,7 @@
          </size>
         </property>
         <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
+         <enum>QFrame::NoFrame</enum>
         </property>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
@@ -173,24 +173,62 @@ font: 63 18pt &quot;URW Gothic&quot;;</string>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="CIN">
-        <property name="focusPolicy">
-         <enum>Qt::StrongFocus</enum>
+       <widget class="QComboBox" name="CIN">
+        <property name="minimumSize">
+         <size>
+          <width>125</width>
+          <height>40</height>
+         </size>
         </property>
-        <property name="autoFillBackground">
-         <bool>false</bool>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
         </property>
         <property name="styleSheet">
-         <string notr="true">color:rgb(0, 0, 0);
-border:  0.5px solid rgb(192, 191, 188);
-border-radius:5px;
-height: 50px;</string>
+         <string notr="true">QComboBox {
+    border: 1px solid rgb(46, 194, 126);
+    border-radius: 10px;
+    padding: 1px 18px 1px 3px;
+    min-width: 6em;
+}
+
+QComboBox:on { /* shift the text when the popup opens */
+    padding-top: 3px;
+    padding-left: 4px;
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+    right: 9px;
+    border-left-width: 1px;
+    border-left-color: rgb(255, 255, 255);
+    border-left-style: solid; /* just a single line */
+    border-top-right-radius: 3px; /* same radius as the QComboBox */
+    border-bottom-right-radius: 3px;
+}
+
+
+QComboBox::down-arrow {
+    image: url(assets/icons/down.png);
+	left:3px
+}
+
+
+QComboBox::down-arrow:on { /* shift the arrow when popup is open */
+   image: url(assets/icons/up.png); 
+	bottom: 2px;
+
+}</string>
         </property>
-        <property name="inputMask">
-         <string>99999999</string>
+        <property name="editable">
+         <bool>false</bool>
+        </property>
+        <property name="currentText">
+         <string/>
         </property>
         <property name="placeholderText">
-         <string/>
+         <string>-Choisir une CIN-</string>
         </property>
        </widget>
       </item>
@@ -243,6 +281,12 @@ height:50px;</string>
    </item>
    <item>
     <widget class="QFrame" name="frame_4">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>79</height>
+      </size>
+     </property>
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>

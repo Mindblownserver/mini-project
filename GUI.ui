@@ -94,7 +94,7 @@
      <addaction name="actionAjMal"/>
      <addaction name="menuModifier_les_donn_es_d_une_maladie"/>
      <addaction name="separator"/>
-     <addaction name="actionSupprimer_une_maladie"/>
+     <addaction name="actionSuppMal"/>
     </widget>
     <widget class="QMenu" name="menuRecherche_affichage_2">
      <property name="title">
@@ -195,7 +195,7 @@
     <string>Ajouter une nouvelle maladie</string>
    </property>
   </action>
-  <action name="actionSupprimer_une_maladie">
+  <action name="actionSuppMal">
    <property name="text">
     <string>Supprimer une maladie</string>
    </property>

@@ -162,7 +162,7 @@ QPushButton:hover{
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>110</y>
+     <y>80</y>
      <width>841</width>
      <height>16</height>
     </rect>
@@ -232,6 +232,9 @@ border-radius:5px;</string>
       </property>
       <property name="inputMask">
        <string>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</string>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </item>

@@ -48,6 +48,8 @@ class AfficherWindow(QWidget):
         elif(self.cr=="indi"):
             self.msg.setMaxLength(2)
             self.cr="Tel"
+        elif(self.cr == "Tel"):
+            self.msg.setInputMask("D9 999 999")
         self.text.setText(msg)
     
     def lenPersonne(self,personnes,st):

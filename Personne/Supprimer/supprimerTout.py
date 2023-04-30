@@ -58,13 +58,14 @@ class SupprimerToutPage(QWidget):
             cp=0
             self.listeOp.takeItem(self.listeOp.indexFromItem(item).row())
             self.list.clear()
-            if self.cr == "Nationalite":
+            for i in range(len(personnes)):
+                if(item.text() in personnes[i-cp][self.cr]): 
+                    del personnes[i-cp]
+                    cp+=1
+                    
+""" if self.cr == "Nationalite":
                 for i in range(len(personnes)):
                     if(personnes[i-cp][self.cr]== item.text()): 
                         del personnes[i-cp]
                         cp+=1
-            else:
-                for i in range(len(personnes)):
-                    if(item.text() in personnes[i-cp][self.cr]): 
-                        del personnes[i-cp]
-                        cp+=1
+            else: """

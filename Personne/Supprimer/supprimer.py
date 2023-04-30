@@ -13,7 +13,7 @@ class SupprimerPage(QWidget):
         self.infoPers.hide()
         self.showData(personnes)
         self.suppBtn.clicked.connect(lambda: self.deletePersonne(personnes))
-        self.list.itemDoubleClicked.connect(lambda item: self.showPersonne(item,personnes))
+        self.list.itemClicked.connect(lambda item: self.showPersonne(item,personnes))
         self.returnBtn.clicked.connect(self.goHome)
         self.show()
     

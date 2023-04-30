@@ -7,6 +7,7 @@ from Personne.Supprimer.supprimerTout import SupprimerToutPage
 from Maladie.Afficher.afficher import MAfficherPage
 from Maladie.Afficher.afficherPers import AfficherMaladiesPersonnesPage
 from Maladie.Ajouter.ajouter import MAjouterPage
+from Maladie.Supprimer.supprimer import MSupprimerPage
 from assets.widgets.messageBox import MessageBox
 from PyQt5.uic import loadUi
 import os
@@ -27,6 +28,7 @@ class MainWindow(QMainWindow):
         path = os.path.dirname(__file__) + "/"
         ui_file = path+"GUI.ui"
         loadUi(ui_file, self)
+        self.cmp = 0
         self.personnes = list(dict())
         self.maladies=list(dict())
         self.nomMaladies = set()
@@ -37,17 +39,15 @@ class MainWindow(QMainWindow):
         self.actionEnre.setEnabled(False)
         # Pages
         self.Home = HomePage()
-        self.Ajouter = AjouterPage(self.personnes)
 
         self.stack.addWidget(self.Home)
-        self.stack.addWidget(self.Ajouter)
         self.stack.setContentsMargins(0,0,0,0)
         #fdsfsdfdsfsdf
     # Set the central widget to the stacked widget
         self.setCentralWidget(self.stack)
         # Mise à jour menu  
         ## Ajouter
-        self.actionAjouter.triggered.connect(lambda: self.openPage(self.Ajouter))
+        self.actionAjouter.triggered.connect(self.openAjouter)
         self.actionAjMal.triggered.connect(lambda: self.openMaladie("ajouter"))
         ## Modifier
         self.actionTel.triggered.connect(lambda: self.openModifier("Téléphone","Tel"))
@@ -56,6 +56,7 @@ class MainWindow(QMainWindow):
         self.actionSuppPers.triggered.connect(lambda: self.openSupprimer())
         self.actionSuppNat.triggered.connect(lambda: self.openSupprimer("une Nationalité"))
         self.actionSuppInd.triggered.connect(lambda: self.openSupprimer("un Indicatif"))
+        self.actionSuppMal.triggered.connect(lambda: self.openMaladie("supprimer"))
         ## Récuperer & Enregistrer
         self.actionRecu.triggered.connect(self.recuperation)
         self.actionEnre.triggered.connect(self.enregistrement)
@@ -74,11 +75,19 @@ class MainWindow(QMainWindow):
 
         self.show()
     
+    def openAjouter(self):
+        self.Ajouter = AjouterPage(self.personnes,self.cmp)
+        self.cmp+=1
+        print(self.cmp)
+        self.openPage(self.Ajouter)
+
     def openMaladie(self,msg):
         if(msg =="ajouter"):
             cin=[personne["CIN"] for personne in self.personnes]
             print(cin)
             self.page= MAjouterPage(self.maladies,self.nomMaladies,cin)
+        elif(msg=="supprimer"):
+            self.page= MSupprimerPage(self.maladies,self.nomMaladies)
         self.openPage(self.page)
 
 
@@ -103,7 +112,8 @@ class MainWindow(QMainWindow):
         self.openPage(self.Supprimer)
     
     def openModifier(self,msg,cr):
-        self.Modifier = ModifierPage(self.personnes,msg,cr)
+        cin=[personne["CIN"] for personne in self.personnes]
+        self.Modifier = ModifierPage(self.personnes,cin,msg,cr)
         self.openPage(self.Modifier)
 
     def openPage(self, page):
@@ -147,7 +157,7 @@ class MainWindow(QMainWindow):
                     })
     def EPersonne(self):
         with open(os.path.dirname(__file__)+"/assets/data/personnes.csv", mode="w") as file:
-            headers = [k for k in self.personnes[0].keys()]
+            headers = ["CIN","Nom","Prenom","Tel","Nationalite","Age","Jour","Mois","Annee","Decede","Adresse"]
             writer = csv.DictWriter(file,fieldnames=headers)
             writer.writeheader()
             writer.writerows(self.personnes)
@@ -168,7 +178,7 @@ class MainWindow(QMainWindow):
                 
     def EMaladies(self):
         with open(os.path.dirname(__file__)+"/assets/data/maladies.csv", mode="w") as file:
-            headers = [k for k in self.maladies[0].keys()]
+            headers = ["Code","CIN","Maladie","nbrAn"]
             writer = csv.DictWriter(file,fieldnames=headers)
             writer.writeheader()
             writer.writerows(self.maladies)
