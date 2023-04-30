@@ -1,1 +1,2 @@
-CIN,NOM,PRENOM,TEL,NATIONALITE,AGE,JOUR,MOIS,ANNEE,DECEDE,Adresse
+CIN,Nom,Prenom,Tel,Nationalite,Age,Jour,Mois,Annee,Decede,Adresse
+11999019,Kharrat,Mohamed Yassine,94 717 790,TUNISIENNE,23,01,01,2000,0,"Rue, Assad ibn fourat"

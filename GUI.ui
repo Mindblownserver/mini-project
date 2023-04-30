@@ -88,8 +88,8 @@
       <property name="title">
        <string>Modifier les données d'une maladie</string>
       </property>
-      <addaction name="actionNombre_d_ann_es"/>
-      <addaction name="actionModifer_d_c_s"/>
+      <addaction name="actionModAnnMal"/>
+      <addaction name="actionModDecMal"/>
      </widget>
      <addaction name="actionAjMal"/>
      <addaction name="menuModifier_les_donn_es_d_une_maladie"/>
@@ -200,12 +200,12 @@
     <string>Supprimer une maladie</string>
    </property>
   </action>
-  <action name="actionNombre_d_ann_es">
+  <action name="actionModAnnMal">
    <property name="text">
     <string>Nombre d'années</string>
    </property>
   </action>
-  <action name="actionModifer_d_c_s">
+  <action name="actionModDecMal">
    <property name="text">
     <string>Modifer décès</string>
    </property>

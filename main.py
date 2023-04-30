@@ -8,6 +8,7 @@ from Maladie.Afficher.afficher import MAfficherPage
 from Maladie.Afficher.afficherPers import AfficherMaladiesPersonnesPage
 from Maladie.Ajouter.ajouter import MAjouterPage
 from Maladie.Supprimer.supprimer import MSupprimerPage
+from Maladie.Modifier.modifier import MModifierPage
 from assets.widgets.messageBox import MessageBox
 from PyQt5.uic import loadUi
 import os
@@ -52,6 +53,8 @@ class MainWindow(QMainWindow):
         ## Modifier
         self.actionTel.triggered.connect(lambda: self.openModifier("Téléphone","Tel"))
         self.actionAdresse.triggered.connect(lambda: self.openModifier("Adresse","Adresse"))
+        self.actionModAnnMal.triggered.connect(lambda: self.openModifierMal("Nombre d'année","nbrAnn"))
+        self.actionModDecMal.triggered.connect(lambda: self.openModifierMal("Décès (0: vivant, 1:mort)","Decede"))
         ## Supprimer
         self.actionSuppPers.triggered.connect(lambda: self.openSupprimer())
         self.actionSuppNat.triggered.connect(lambda: self.openSupprimer("une Nationalité"))
@@ -74,6 +77,10 @@ class MainWindow(QMainWindow):
         self.actionRechercheMalPers.triggered.connect(self.openAfficherMaladiePersonne)
 
         self.show()
+    
+    def openModifierMal(self,msg,cr):
+        self.Modifier=MModifierPage(msg,cr)
+        self.openPage(self.Modifier)
     
     def openAjouter(self):
         self.Ajouter = AjouterPage(self.personnes,self.cmp)

@@ -27,7 +27,7 @@ class ModifierPage(QWidget):
     def modifier(self,personnes,listeCIN,critere):
         cin = self.CIN.currentText()
         val = self.cr.text()
-        if(critere=="Tel" and val in self.tel):
+        if(critere=="Tel" and (val in self.tel or val =="")):
             msg =MessageBox("Error de modification","Le numéro du téléphone {} est déjà dans la base de données".format(val),"error")
             msg.exec_()
         else:
