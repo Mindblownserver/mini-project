@@ -6,3 +6,8 @@ class First(QWidget):
         super().__init__(*args, **kwargs)
         path = os.path.dirname(__file__) + "/"
         uic.loadUi(path+'first.ui', self)
+test= {
+    "KEY1":123,
+    "KEY2":423,
+    "KEY3":142
+}

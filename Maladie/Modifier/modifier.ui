@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_7">
    <item>
     <widget class="QFrame" name="frame_6">
@@ -49,7 +52,7 @@
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QPushButton" name="returnBtn_2">
+        <widget class="QPushButton" name="returnBtn">
          <property name="geometry">
           <rect>
            <x>-10</x>
@@ -357,7 +360,13 @@ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
      </property>
      <layout class="QVBoxLayout" name="verticalLayout_5">
       <item>
-       <widget class="QLabel" name="lbl_2">
+       <widget class="QLabel" name="crLbl">
+        <property name="font">
+         <font>
+          <family>URW Gothic</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
         <property name="text">
          <string>Lorem Ipsum</string>
         </property>
@@ -406,7 +415,7 @@ color: rgb(36, 31, 49);
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QPushButton" name="modifierBtn_2">
+     <widget class="QPushButton" name="modifierBtn">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -444,7 +453,7 @@ QPushButton:hover{
        <bool>false</bool>
       </property>
       <property name="flat">
-       <bool>false</bool>
+       <bool>true</bool>
       </property>
      </widget>
     </widget>

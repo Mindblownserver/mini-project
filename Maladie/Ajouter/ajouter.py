@@ -20,12 +20,12 @@ class MAjouterPage(QWidget):
         self.nMaladie.addItems(list(nom))
         self.CIN.addItems(cin)
         for maladie in maladies:
-            if maladie["Maladie"] not in self.cinM.keys():
-                self.cinM[maladie["Maladie"]] = [maladie["CIN"]]
-            else:self.cinM[maladie["Maladie"]].append(maladie["CIN"])
+            if maladie["CIN"] not in self.cinM.keys():
+                self.cinM[maladie["CIN"]] = [maladie["Maladie"]]
+            else:self.cinM[maladie["CIN"]].append(maladie["Maladie"])
 
     def ajouter(self,maladies,nomMaladies):
-        nomMaladie = self.nMaladie.currentText()
+        nomMaladie = self.nMaladie.currentText().upper()
         cin = self.CIN.currentText()
         an = str(self.nbrAn.value())
         index = str(int(maladies[-1]["Code"])+1)
@@ -36,7 +36,7 @@ class MAjouterPage(QWidget):
         elif(cin == "-Choisir une CIN-" or cin == ""):
             msg = MessageBox("Erreur 404: utilisateur introvable","Veuillez verifier la CIN","error")
             msg.exec_()
-        elif(cin == self.cinM[nomMaladie]):
+        elif(cin in self.cinM.keys() and nomMaladie in self.cinM[cin]):
             msg = MessageBox(f"Erreur de redondance","Le patient ayant {cin} souffre déjà de la maladie {nomMaladie}","error")
             msg.exec_()
         else:

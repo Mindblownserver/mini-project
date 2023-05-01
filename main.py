@@ -53,7 +53,7 @@ class MainWindow(QMainWindow):
         ## Modifier
         self.actionTel.triggered.connect(lambda: self.openModifier("Téléphone","Tel"))
         self.actionAdresse.triggered.connect(lambda: self.openModifier("Adresse","Adresse"))
-        self.actionModAnnMal.triggered.connect(lambda: self.openModifierMal("Nombre d'année","nbrAnn"))
+        self.actionModAnnMal.triggered.connect(lambda: self.openModifierMal("Nombre d'année","nbrAn"))
         self.actionModDecMal.triggered.connect(lambda: self.openModifierMal("Décès (0: vivant, 1:mort)","Decede"))
         ## Supprimer
         self.actionSuppPers.triggered.connect(lambda: self.openSupprimer())
@@ -79,7 +79,8 @@ class MainWindow(QMainWindow):
         self.show()
     
     def openModifierMal(self,msg,cr):
-        self.Modifier=MModifierPage(msg,cr)
+        persMal = self.maladies if cr=="nbrAn" else self.personnes
+        self.Modifier=MModifierPage(persMal,msg,cr)
         self.openPage(self.Modifier)
     
     def openAjouter(self):
@@ -135,13 +136,13 @@ class MainWindow(QMainWindow):
         self.actionEnre.setEnabled(True)
         self.actionRecu.setEnabled(False)
         self.Calcul.setEnabled(True)
-        msg = MessageBox("Opération a été un succès","On a récupéré l'information situé dans le fichier personnes.csv","info")
+        msg = MessageBox("Opération a été un succès","On a récupéré des informations","info")
         msg.exec_() 
 
     def enregistrement(self):
         self.EPersonne()
         self.EMaladies()
-        msg = MessageBox("Opération a été un succès","On a enregistré l'information dans le fichier personnes.csv","info")
+        msg = MessageBox("Opération a été un succès","On a enregistré des informations!","info")
         msg.exec_() 
     
     def RPersonne(self):
@@ -175,7 +176,7 @@ class MainWindow(QMainWindow):
             for i, row in enumerate(reader):
                 if i != 0:
                     self.maladies.append({
-                        "Code": row[0],
+                        "Code": str(i),
                         "CIN": row[1],
                         "Maladie": row[2],
                         "nbrAn": row[3],

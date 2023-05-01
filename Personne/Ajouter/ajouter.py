@@ -8,6 +8,7 @@ class AjouterPage(QWidget):
         path = os.path.dirname(__file__)+"/"
         ui_file = path+"ajouter.ui"
         loadUi(ui_file,self)
+        self.show()
         self.cin=list()
         self.tel=list()
         self.loadCle(personnes,cmp)
@@ -15,7 +16,7 @@ class AjouterPage(QWidget):
         self.ajouterBtn.clicked.connect(lambda : self.ajouter(personnes=personnes))
         self.generate.clicked.connect(lambda: self.generer(personnes))
 
-        self.show()
+        
     def goHome(self):
         self.parent().setCurrentIndex(0)
     def loadCle(self,personnes,cmp):

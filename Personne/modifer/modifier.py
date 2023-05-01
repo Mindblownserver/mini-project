@@ -32,7 +32,7 @@ class ModifierPage(QWidget):
             msg.exec_()
         else:
             personnes[self.indicePers(listeCIN,cin)][critere] = val
-            msg =MessageBox("Opération a été un succès","Les données du patient {} a été modifiées".format(cin),"info")
+            msg =MessageBox("Opération a été un succès","Les données du patient {} ont été modifiées".format(cin),"info")
             msg.exec_()
             self.goHome()
     def indicePers(self,listeCIN,cin):
