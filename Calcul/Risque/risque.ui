@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>736</width>
+    <height>630</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QFrame" name="frame_6">
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>80</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>90</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_6">
+      <item>
+       <widget class="QFrame" name="frame_4">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>60</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0">
+         <property name="spacing">
+          <number>2</number>
+         </property>
+         <item>
+          <widget class="QPushButton" name="returnBtn">
+           <property name="maximumSize">
+            <size>
+             <width>42</width>
+             <height>42</height>
+            </size>
+           </property>
+           <property name="cursor">
+            <cursorShape>PointingHandCursor</cursorShape>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;return to home page&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton:hover{
+	background-color:none;
+	border: 2px solid rgb(28, 113, 216);
+	border-radius: 5px;
+}</string>
+           </property>
+           <property name="text">
+            <string/>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../../assets/icons/returnOff.svg</normaloff>
+             <normalon>../../assets/icons/returnOn.svg</normalon>
+             <selectedoff>../../assets/icons/returnOff.svg</selectedoff>
+             <selectedon>../../assets/icons/returnOn.svg</selectedon>../../assets/icons/returnOff.svg</iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>64</width>
+             <height>64</height>
+            </size>
+           </property>
+           <property name="autoDefault">
+            <bool>false</bool>
+           </property>
+           <property name="default">
+            <bool>false</bool>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="titre_2">
+           <property name="maximumSize">
+            <size>
+             <width>254</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>URW Gothic</family>
+             <pointsize>18</pointsize>
+             <weight>8</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:rgb(28, 113, 216);
+font: 63 18pt &quot;URW Gothic&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Afficher les personnes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="titre_3">
+           <property name="font">
+            <font>
+             <family>URW Gothic</family>
+             <pointsize>18</pointsize>
+             <weight>8</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:rgb(192, 28, 40);
+font: 63 18pt &quot;URW Gothic&quot;;</string>
+           </property>
+           <property name="text">
+            <string>à risque</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QFrame" name="frame_2">
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QScrollArea" name="scrollWidget">
+           <property name="horizontalScrollBarPolicy">
+            <enum>Qt::ScrollBarAsNeeded</enum>
+           </property>
+           <property name="widgetResizable">
+            <bool>false</bool>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+           </property>
+           <widget class="QWidget" name="scrollAreaWidgetContents">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>370</width>
+              <height>477</height>
+             </rect>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3"/>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="pourcRisque">
+        <property name="minimumSize">
+         <size>
+          <width>300</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>300</width>
+          <height>300</height>
+         </size>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::NoFrame</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="0" column="0">
+          <widget class="QFrame" name="container">
+           <property name="minimumSize">
+            <size>
+             <width>282</width>
+             <height>282</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>282</width>
+             <height>282</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true"/>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <property name="topMargin">
+             <number>0</number>
+            </property>
+            <property name="rightMargin">
+             <number>0</number>
+            </property>
+            <property name="bottomMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QFrame" name="circ_bg">
+              <property name="font">
+               <font>
+                <family>URW Gothic</family>
+                <pointsize>12</pointsize>
+                <weight>50</weight>
+                <italic>false</italic>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QFrame{
+background-color: rgb(3, 7, 54);
+color: rgb(246, 246, 255);
+border-radius:140px;
+font: 12pt &quot;URW Gothic&quot;;
+}</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QVBoxLayout" name="verticalLayout_5">
+               <property name="spacing">
+                <number>0</number>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <property name="rightMargin">
+                <number>0</number>
+               </property>
+               <property name="bottomMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QFrame" name="text">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>180</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background:none;</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_7">
+                  <item>
+                   <layout class="QGridLayout" name="gridLayout">
+                    <item row="1" column="0">
+                     <widget class="QFrame" name="empty">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>60</height>
+                       </size>
+                      </property>
+                      <property name="frameShape">
+                       <enum>QFrame::NoFrame</enum>
+                      </property>
+                      <property name="frameShadow">
+                       <enum>QFrame::Raised</enum>
+                      </property>
+                      <widget class="QLabel" name="percentage">
+                       <property name="geometry">
+                        <rect>
+                         <x>0</x>
+                         <y>0</y>
+                         <width>261</width>
+                         <height>81</height>
+                        </rect>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>30</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">color: rgb(246, 245, 244);
+font: 15pt &quot;URW Gothic&quot;;</string>
+                       </property>
+                       <property name="text">
+                        <string>123%</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </widget>
+                    </item>
+                    <item row="0" column="0">
+                     <widget class="QLabel" name="title">
+                      <property name="minimumSize">
+                       <size>
+                        <width>0</width>
+                        <height>30</height>
+                       </size>
+                      </property>
+                      <property name="text">
+                       <string>Pourcentage du risque</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

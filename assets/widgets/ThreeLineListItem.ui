@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ThreeLineListItem</class>
+ <widget class="QWidget" name="ThreeLineListItem">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>373</width>
+    <height>145</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <spacer name="verticalSpacer_2">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="styleSheet">
+      <string notr="true">QWidget{
+background-color: rgb(255, 255, 255);
+border-radius:40px;
+border:1px solid rgb(0, 0, 0);
+}
+QWidget:hover{
+background-color: rgb(246, 245, 244);
+}</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QFrame" name="frame">
+        <property name="minimumSize">
+         <size>
+          <width>74</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>74</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:none;
+border: none;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>10</y>
+           <width>51</width>
+           <height>51</height>
+          </rect>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>93</width>
+           <height>93</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border: 2px solid rgb(28, 113, 216);
+border-radius: 25px;
+padding: 5px;
+</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="pixmap">
+          <pixmap>../icons/icons8-user-92.png</pixmap>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_2">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color:none;
+border: none;</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="nom">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 12pt bold &quot;URW Gothic&quot;;</string>
+           </property>
+           <property name="text">
+            <string>Mohamed Yassine Kharrat</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="cin">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 10pt &quot;URW Gothic&quot;;
+color: rgb(36, 31, 49);</string>
+           </property>
+           <property name="text">
+            <string>11999019</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="age">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">font: 8pt &quot;URW Gothic&quot;;
+color: rgb(61, 56, 70);</string>
+           </property>
+           <property name="text">
+            <string>19 ans</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>10</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
