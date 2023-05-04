@@ -214,6 +214,16 @@ border-radius:5px;</string>
       <property name="styleSheet">
        <string notr="true">color:rgb(36, 31, 49);</string>
       </property>
+      <property name="minimumDate">
+       <date>
+        <year>2020</year>
+        <month>1</month>
+        <day>1</day>
+       </date>
+      </property>
+      <property name="calendarPopup">
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
     <item row="0" column="1">

@@ -113,9 +113,9 @@
     <property name="title">
      <string>Calcul et affichage</string>
     </property>
-    <addaction name="actionAfficher_par_nationalit"/>
-    <addaction name="actionPersonnes_en_quarantaine"/>
-    <addaction name="actionPersonnes_d_c_d_s"/>
+    <addaction name="actionAffNatCalc"/>
+    <addaction name="actionAffQuaCalc"/>
+    <addaction name="actionAffDecedeCalc"/>
     <addaction name="actionPersonnes_risque"/>
    </widget>
    <widget class="QMenu" name="Enregistrement">
@@ -235,17 +235,17 @@
     <string>Recherche maladies de chaque personne</string>
    </property>
   </action>
-  <action name="actionAfficher_par_nationalit">
+  <action name="actionAffNatCalc">
    <property name="text">
     <string>Afficher par nationalité</string>
    </property>
   </action>
-  <action name="actionPersonnes_en_quarantaine">
+  <action name="actionAffQuaCalc">
    <property name="text">
     <string>Personnes en quarantaine</string>
    </property>
   </action>
-  <action name="actionPersonnes_d_c_d_s">
+  <action name="actionAffDecedeCalc">
    <property name="text">
     <string>Personnes décédés</string>
    </property>

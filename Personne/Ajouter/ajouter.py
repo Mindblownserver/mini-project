@@ -1,6 +1,7 @@
 import os
 from PyQt5.uic import loadUi 
-from PyQt5.QtWidgets import QWidget,QApplication
+from PyQt5.QtCore import QDate
+from PyQt5.QtWidgets import QWidget
 from assets.widgets.messageBox import *
 class AjouterPage(QWidget):
     def __init__(self,personnes,cmp):
@@ -8,14 +9,14 @@ class AjouterPage(QWidget):
         path = os.path.dirname(__file__)+"/"
         ui_file = path+"ajouter.ui"
         loadUi(ui_file,self)
+        self.LDate.setMaximumDate(QDate.currentDate())
         self.show()
         self.cin=list()
         self.tel=list()
         self.loadCle(personnes,cmp)
-        self.returnBtn.clicked.connect(self.goHome)
         self.ajouterBtn.clicked.connect(lambda : self.ajouter(personnes=personnes))
         self.generate.clicked.connect(lambda: self.generer(personnes))
-
+        self.returnBtn.clicked.connect(self.goHome)
         
     def goHome(self):
         self.parent().setCurrentIndex(0)

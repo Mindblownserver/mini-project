@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1008</width>
+    <width>1016</width>
     <height>670</height>
    </rect>
   </property>
@@ -141,6 +141,9 @@ font: 63 18pt &quot;URW Gothic&quot;;</string>
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
       <item alignment="Qt::AlignLeft">
        <widget class="QListWidget" name="list">
         <property name="minimumSize">
@@ -170,11 +173,11 @@ font: 63 18pt &quot;URW Gothic&quot;;</string>
        </widget>
       </item>
       <item>
-       <widget class="QFrame" name="frame_5">
-        <property name="maximumSize">
+       <widget class="QFrame" name="frame_9">
+        <property name="minimumSize">
          <size>
-          <width>100</width>
-          <height>16777215</height>
+          <width>30</width>
+          <height>0</height>
          </size>
         </property>
         <property name="frameShape">

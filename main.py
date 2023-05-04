@@ -10,11 +10,12 @@ from Maladie.Ajouter.ajouter import MAjouterPage
 from Maladie.Supprimer.supprimer import MSupprimerPage
 from Maladie.Modifier.modifier import MModifierPage
 from assets.widgets.messageBox import MessageBox
+from Calcul.Nationalité.nat import AfficherNatPage
+from Calcul.Quarantaine.quarantaine import AffQuaPage
+from Calcul.Décédé.decede import AffPersDecdePage
 from PyQt5.uic import loadUi
 import os
 import csv
-
-# Initialisation de l'application
 
 class HomePage(QWidget):
     def __init__(self):
@@ -38,13 +39,11 @@ class MainWindow(QMainWindow):
         self.Gestion.setEnabled(False)
         self.Calcul.setEnabled(False)
         self.actionEnre.setEnabled(False)
-        # Pages
+        # Pages & widgets
         self.Home = HomePage()
 
         self.stack.addWidget(self.Home)
         self.stack.setContentsMargins(0,0,0,0)
-        #fdsfsdfdsfsdf
-    # Set the central widget to the stacked widget
         self.setCentralWidget(self.stack)
         # Mise à jour menu  
         ## Ajouter
@@ -75,9 +74,18 @@ class MainWindow(QMainWindow):
         self.actionRechercheMalPerc.triggered.connect(lambda: self.openAfficherMaladie("Recherche par une maladie","nom 1"))
         self.actionRecherchePers.triggered.connect(lambda: self.openAfficherMaladie("Recherche les maladies d'une personne par CIN","CIN"))
         self.actionRechercheMalPers.triggered.connect(self.openAfficherMaladiePersonne)
-
+        # Calcul & afficher
+        self.actionAffNatCalc.triggered.connect(lambda: self.openAffCalc("nat"))
+        self.actionAffQuaCalc.triggered.connect(lambda: self.openAffCalc("quarantaine"))
+        self.actionAffDecedeCalc.triggered.connect(lambda: self.openAffCalc("decede"))
         self.show()
     
+    def openAffCalc(self,cr):
+        if(cr=="nat"): page = AfficherNatPage(self.personnes)
+        elif(cr=="quarantaine"): page = AffQuaPage(self.personnes)
+        elif(cr=="decede"):page = AffPersDecdePage(self.personnes)
+        self.openPage(page)
+
     def openModifierMal(self,msg,cr):
         persMal = self.maladies if cr=="nbrAn" else self.personnes
         self.Modifier=MModifierPage(persMal,msg,cr)
