@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>736</width>
+    <width>753</width>
     <height>630</height>
    </rect>
   </property>
@@ -169,19 +169,114 @@ font: 63 18pt &quot;URW Gothic&quot;;</string>
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
+      <item alignment="Qt::AlignLeft">
        <widget class="QFrame" name="frame_2">
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>500</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="cursor">
+         <cursorShape>ArrowCursor</cursorShape>
+        </property>
         <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
+         <enum>QFrame::NoFrame</enum>
         </property>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <property name="rightMargin">
+          <number>9</number>
+         </property>
          <item>
-          <widget class="QScrollArea" name="scrollWidget">
+          <widget class="QScrollArea" name="scroll">
+           <property name="minimumSize">
+            <size>
+             <width>380</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>380</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QScrollBar:vertical {
+	border: none;
+    background: none;
+    width: 14px;
+    margin: 15px 0 15px 0;
+	border-radius: 0px;
+ }
+
+/*  HANDLE BAR VERTICAL */
+QScrollBar::handle:vertical {	
+	background-color: rgb(213, 213, 213);
+	min-height: 30px;
+	border-radius: 5px;
+}
+QScrollBar::handle:vertical:hover{	
+	background-color: rgb(213, 213, 213);
+}
+QScrollBar::handle:vertical:pressed {	
+	background-color: rgb(162, 162, 162);
+}
+
+/* BTN TOP - SCROLLBAR */
+QScrollBar::sub-line:vertical {
+	border: none;
+	height: 0;
+	subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical:hover {	
+	background-color: rgb(255, 0, 127);
+}
+QScrollBar::sub-line:vertical:pressed {	
+	background-color: rgb(185, 0, 92);
+}
+
+/* BTN BOTTOM - SCROLLBAR */
+QScrollBar::add-line:vertical {
+	border: none;
+	height:0;
+	subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical:hover {	
+	background-color: rgb(255, 0, 127);
+}
+QScrollBar::add-line:vertical:pressed {	
+	background-color: rgb(185, 0, 92);
+}
+
+/* RESET ARROW */
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+	background: none;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+	background: none;
+}
+
+
+</string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::VLine</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Plain</enum>
+           </property>
            <property name="horizontalScrollBarPolicy">
-            <enum>Qt::ScrollBarAsNeeded</enum>
+            <enum>Qt::ScrollBarAlwaysOff</enum>
            </property>
            <property name="widgetResizable">
             <bool>false</bool>

@@ -13,6 +13,7 @@ from assets.widgets.messageBox import MessageBox
 from Calcul.Nationalité.nat import AfficherNatPage
 from Calcul.Quarantaine.quarantaine import AffQuaPage
 from Calcul.Décédé.decede import AffPersDecdePage
+from Calcul.Risque.risque import AffPersRisquePage
 from PyQt5.uic import loadUi
 import os
 import csv
@@ -78,12 +79,14 @@ class MainWindow(QMainWindow):
         self.actionAffNatCalc.triggered.connect(lambda: self.openAffCalc("nat"))
         self.actionAffQuaCalc.triggered.connect(lambda: self.openAffCalc("quarantaine"))
         self.actionAffDecedeCalc.triggered.connect(lambda: self.openAffCalc("decede"))
+        self.actionAffRisqueCalc.triggered.connect(lambda: self.openAffCalc("risque"))
         self.show()
     
     def openAffCalc(self,cr):
         if(cr=="nat"): page = AfficherNatPage(self.personnes)
         elif(cr=="quarantaine"): page = AffQuaPage(self.personnes)
         elif(cr=="decede"):page = AffPersDecdePage(self.personnes)
+        else:page=AffPersRisquePage(self.personnes,self.maladies)
         self.openPage(page)
 
     def openModifierMal(self,msg,cr):

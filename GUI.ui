@@ -116,7 +116,7 @@
     <addaction name="actionAffNatCalc"/>
     <addaction name="actionAffQuaCalc"/>
     <addaction name="actionAffDecedeCalc"/>
-    <addaction name="actionPersonnes_risque"/>
+    <addaction name="actionAffRisqueCalc"/>
    </widget>
    <widget class="QMenu" name="Enregistrement">
     <property name="title">
@@ -250,7 +250,7 @@
     <string>Personnes décédés</string>
    </property>
   </action>
-  <action name="actionPersonnes_risque">
+  <action name="actionAffRisqueCalc">
    <property name="text">
     <string>Personnes à risque</string>
    </property>
