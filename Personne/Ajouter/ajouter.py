@@ -39,11 +39,11 @@ class AjouterPage(QWidget):
         age = self.LAge.text()
         tel = self.LTel.text()
         cin = self.LCIN.text()
-        adr = self.LAdr.text()
+        adr = self.LAdr.text().strip()
         date = self.LDate.text().split("/")
         day,month,year = date[0],date[1],date[2]
         decede = "1" if self.dead.isChecked() else "0"
-        if(nat =="-Nationalité-"or nom=="" or prenom=="" or age=="" or tel=="" or cin=="" or adr=="" or len(date)==0):
+        if(nat =="-Nationalité-".upper() or nom=="" or prenom=="" or age=="" or tel=="" or cin=="" or adr=="" or len(date)==0):
             msg =MessageBox("Il ya une insuffisance des données","Veuillez vérifier les données que vous avez mis","error")
             msg.exec_() 
         elif(cin in self.cin or tel in self.tel):
