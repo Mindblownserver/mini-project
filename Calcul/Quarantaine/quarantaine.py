@@ -21,7 +21,7 @@ class AffQuaPage(QWidget):
         now = QDate().currentDate()
         for personne in personnes:
             date = QDate(int(personne["Annee"]),int(personne["Mois"]),int(personne["Jour"]))
-            if (date.daysTo(now)<=14):
+            if ((date.daysTo(now)<=14) and (personne["Decede"]!="1")):
                 res.append(personne)
         return res
     

@@ -4,7 +4,7 @@ from assets.widgets.messageBox import MessageBox
 import os
 
 class SupprimerPage(QWidget):
-    def __init__(self,personnes):
+    def __init__(self,personnes,maladies):
         super().__init__()
         path = os.path.dirname(__file__) + "/"
         ui_file = path+"supprimer.ui"
@@ -12,7 +12,7 @@ class SupprimerPage(QWidget):
         loadUi(ui_file, self)
         self.infoPers.hide()
         self.showData(personnes)
-        self.suppBtn.clicked.connect(lambda: self.deletePersonne(personnes))
+        self.suppBtn.clicked.connect(lambda: self.deletePersonne(personnes,maladies))
         self.list.itemClicked.connect(lambda item: self.showPersonne(item,personnes))
         self.returnBtn.clicked.connect(self.goHome)
         self.show()
@@ -38,15 +38,26 @@ class SupprimerPage(QWidget):
         self.dead.setText(personne["Decede"])
 
         self.infoPers.show()
-    def deletePersonne(self,personnes):
+    def deletePersonne(self,personnes,maladies):
         cin = self.CIN.text()
         index = self.lCIN.index(cin)
-        msg =MessageBox("Êtes vous sûre de l'opèration?","Tu vas perdre les données du patient {} {}".format(personnes[index]["Prenom"],personnes[index]["Nom"]),"critique")
-        msg.buttonClicked.connect(lambda btn: self.popupBtn(btn,index,personnes))
+        msg =MessageBox("Voulez vous vraiment supprimer {} {}".format(personnes[index]["Prenom"],personnes[index]["Nom"]),"","critique")
+        msg.buttonClicked.connect(lambda btn: self.popupBtn(btn,index,personnes,maladies))
         msg.exec_() 
-    def popupBtn(self,btn,index,personnes):
+    def popupBtn(self,btn,index,personnes,maladies):
         print(btn.text())
         if btn.text()[1:] == "Yes":
-            self.lCIN.pop(index)
-            personnes.pop(index)
             self.list.takeItem(index)
+            self.lCIN.pop(index)
+            # Supprimer personne de la maladie
+            self.supprimerDeLaMaladie(personnes[index]["CIN"],maladies)
+            personnes.pop(index)
+            
+
+    def supprimerDeLaMaladie(self,CIN,maladies):
+        cp=0
+        for i in range(len(maladies)):
+            if (maladies[i-cp]["CIN"]==CIN):
+                t=maladies.pop(i-cp)
+                print(t)
+                cp+=1

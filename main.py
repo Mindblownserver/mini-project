@@ -122,9 +122,9 @@ class MainWindow(QMainWindow):
     
     def openSupprimer(self,cr=""):
         if(cr==""):
-            self.Supprimer = SupprimerPage(self.personnes)
+            self.Supprimer = SupprimerPage(self.personnes,self.maladies)
         else:
-            self.Supprimer = SupprimerToutPage(self.personnes, cr)
+            self.Supprimer = SupprimerToutPage(self.personnes,self.maladies ,cr)
         self.openPage(self.Supprimer)
     
     def openModifier(self,msg,cr):

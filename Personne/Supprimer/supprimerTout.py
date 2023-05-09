@@ -4,7 +4,7 @@ from assets.widgets.messageBox import MessageBox
 import os
 
 class SupprimerToutPage(QWidget):
-    def __init__(self,personnes,criteria):
+    def __init__(self,personnes,maladies,criteria):
         super().__init__()
         self.lCr=dict()
         path = os.path.dirname(__file__) + "/"
@@ -14,7 +14,7 @@ class SupprimerToutPage(QWidget):
         self.msg.setText(self.msg.text()+criteria+" donnée")
         self.listeOp.itemClicked.connect(lambda item: self.showData(item,self.lCr))
         self.returnBtn.clicked.connect(self.goHome)
-        self.suppBtn.clicked.connect(lambda: self.deleteCr(personnes))
+        self.suppBtn.clicked.connect(lambda: self.deleteCr(personnes,maladies))
         self.show()
     
     def goHome(self):
@@ -47,12 +47,12 @@ class SupprimerToutPage(QWidget):
             self.list.addItem(nom)
             # self.lCIN.append(personne["CIN"])
 
-    def deleteCr(self,personnes):
+    def deleteCr(self,personnes,maladies):
         msg = MessageBox("Êtes vous sûre de l'opèration?","Tu vas perdre les données des personnes ayant cette critère pour toujours ","critique")
-        msg.buttonClicked.connect(lambda btn: self.popupBtn(btn,personnes))
+        msg.buttonClicked.connect(lambda btn: self.popupBtn(btn,personnes,maladies))
         msg.exec_() 
 
-    def popupBtn(self,btn,personnes):
+    def popupBtn(self,btn,personnes,maladies):
         item = self.listeOp.currentItem()
         if btn.text()[1:] == "Yes":
             cp=0
@@ -60,9 +60,20 @@ class SupprimerToutPage(QWidget):
             self.list.clear()
             for i in range(len(personnes)):
                 if(item.text() in personnes[i-cp][self.cr]): 
+                    # Supprimer personne de la maladie
+                    self.supprimerDeLaMaladie(personnes[i-cp]["CIN"],maladies)
                     del personnes[i-cp]
                     cp+=1
-                    
+    
+    def supprimerDeLaMaladie(self,CIN,maladies):
+        cp=0
+        for i in range(len(maladies)):
+            if (maladies[i-cp]["CIN"]==CIN):
+                t=maladies.pop(i-cp)
+                print(t)
+                cp+=1
+
+
 """ if self.cr == "Nationalite":
                 for i in range(len(personnes)):
                     if(personnes[i-cp][self.cr]== item.text()): 

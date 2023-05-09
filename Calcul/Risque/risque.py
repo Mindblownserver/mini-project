@@ -36,13 +36,16 @@ class AffPersRisquePage(QWidget):
                 #{CIN:[NOM PRENOM, AGE]}
                 res[personne["CIN"]] = [personne["Nom"],personne["Prenom"],int(personne["Age"])]
         return res
+    
     def CalculRisqueDesPersonnes(self,dictPersonnes,dictMaladies):
         afficherDict=dict()
         for cinKey in dictPersonnes.keys():
             percentage=0
             if(cinKey in dictMaladies.keys()):
                 percentage=percentage+20 if dictPersonnes[cinKey][-1] >70 else percentage+10 if 50<=dictPersonnes[cinKey][-1]<=70 else 0
-                percentage=percentage+15 if "DIABETE" in dictMaladies[cinKey] else percentage+20 if ("HYPERTENSION" in dictMaladies[cinKey] or "ASTHME" in dictMaladies[cinKey]) else percentage+0
+                if "DIABETE" in dictMaladies[cinKey]:percentage=percentage+15
+                if "HYPERTENSION" in dictMaladies[cinKey]: percentage=percentage+20
+                if "ASTHME" in dictMaladies[cinKey]: percentage=percentage+20
             if percentage!=0:
                 afficherDict[cinKey]=[dictPersonnes[cinKey][0],dictPersonnes[cinKey][1],dictPersonnes[cinKey][2],percentage]                
         print(afficherDict)

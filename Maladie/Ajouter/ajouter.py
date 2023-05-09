@@ -10,7 +10,7 @@ class MAjouterPage(QWidget):
         ui_file = path+"ajouter.ui"
         loadUi(ui_file, self)
         self.loadData(maladies,nomMaladies,listeCin)
-        self.ajouterBtn.clicked.connect(lambda: self.ajouter(maladies,nomMaladies))
+        self.ajouterBtn.clicked.connect(lambda: self.ajouter(maladies,nomMaladies,listeCin))
         self.returnBtn.clicked.connect(self.goHome)
         self.show()
     def goHome(self):
@@ -24,7 +24,7 @@ class MAjouterPage(QWidget):
                 self.cinM[maladie["CIN"]] = [maladie["Maladie"]]
             else:self.cinM[maladie["CIN"]].append(maladie["Maladie"])
 
-    def ajouter(self,maladies,nomMaladies):
+    def ajouter(self,maladies,nomMaladies,listeCin):
         nomMaladie = self.nMaladie.currentText().upper()
         cin = self.CIN.currentText()
         an = str(self.nbrAn.value())
@@ -33,7 +33,7 @@ class MAjouterPage(QWidget):
         if(nomMaladie=="-Choisir une maladie-"):
             msg = MessageBox("Choisissez une maladie pour le patient","","error")
             msg.exec_()
-        elif(cin == "-Choisir une CIN-" or cin == ""):
+        elif(cin == "-Choisir une CIN-" or cin == "" or cin not in listeCin):
             msg = MessageBox("Erreur 404: utilisateur introvable","Veuillez verifier la CIN","error")
             msg.exec_()
         elif(cin in self.cinM.keys() and nomMaladie in self.cinM[cin]):

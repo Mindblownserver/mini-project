@@ -23,8 +23,9 @@ class MAfficherPage(QWidget):
         if(self.cr=="Tout" or cr.split()[-1]=="1"):
             self.critere.hide()
         elif(self.cr=="nom"):
-            self.msg.setInputMask("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
             self.cr="Maladie"
+        elif(self.cr=="CIN"):
+            self.msg.setMaxLength(8)
         self.text.setText(msg)
 
     def rechercheClassic(self):
@@ -56,7 +57,7 @@ class MAfficherPage(QWidget):
         for personne in self.maladies:
             if personne["Maladie"] == nom:
                cp+=1
-        return str((cp/len(self.maladies))*100)
+        return "%.2f" %((cp/len(self.maladies))*100)
     
     
     """ self.parMaladie("8312655")

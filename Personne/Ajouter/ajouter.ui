@@ -399,6 +399,9 @@ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
    image: url(assets/icons/up.png); 
 	bottom: 2px;
 
+}
+QComboBox QAbstractItemView {
+	background-color: rgb(255, 255, 255);
 }</string>
        </property>
        <property name="editable">

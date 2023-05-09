@@ -26,13 +26,13 @@ class ModifierPage(QWidget):
 
     def modifier(self,personnes,listeCIN,critere):
         cin = self.CIN.currentText()
-        val = self.cr.text()
+        val = self.cr.text() if critere!="Tel" else str(self.crTel.value())
         if(critere=="Tel" and (val in self.tel or val =="")):
-            msg =MessageBox("Error de modification","Le numéro du téléphone {} est déjà dans la base de données".format(val),"error")
+            msg =MessageBox("Le numéro du téléphone éxiste déjà","","error")
             msg.exec_()
         else:
             personnes[self.indicePers(listeCIN,cin)][critere] = val
-            msg =MessageBox("Opération a été un succès","Les données du patient {} ont été modifiées".format(cin),"info")
+            msg =MessageBox("Opération éxecutée avec succès","","info")
             msg.exec_()
             self.goHome()
     def indicePers(self,listeCIN,cin):
@@ -40,4 +40,6 @@ class ModifierPage(QWidget):
 
     def afficheMode(self,critere):
         if(critere == "Tel"):
-            self.cr.setInputMask("00 000 000")
+            self.cr.hide()
+        else:
+            self.crTel.hide()
