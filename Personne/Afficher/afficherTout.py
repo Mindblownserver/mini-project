@@ -14,7 +14,7 @@ class AfficherWindow(QWidget):
         self.showData(personnes,st)
         # Recherche listener
         #self.msg.textChanged.connect(lambda x: print(x))
-        self.rechercheBtn.clicked.connect(lambda: self.showData(self.rechercheClassic(personnes),st))
+        self.rechercheBtn.clicked.connect(lambda: self.showData(self.rechercheClassic(personnes,critere),st))
         self.returnBtn.clicked.connect(self.goHome)
         self.show()
     
@@ -59,12 +59,17 @@ class AfficherWindow(QWidget):
         if st=="": return len(personnes)
         return (len([0 for personne in personnes if personne["Decede"] == st]))
     
-    def rechercheClassic(self,personnes):
+    def rechercheClassic(self,personnes,cr):
         text = self.msg.text() if(self.cr!="Tel") else str(self.msgTel.value())
-        personneCherche= list(dict())
+        personneCherche= list()
         if(text=="0"):return personnes
         for personne in personnes:
-            if (text.lower() in personne[self.cr].lower()):
-                personneCherche.append(personne)          
+            if(cr=="indi"):
+                if(text== personne[self.cr][:2]):
+                    personneCherche.append(personne) 
+            else:
+                if (text.lower() in personne[self.cr].lower()):
+                    personneCherche.append(personne)  
+                    
         return personneCherche
         

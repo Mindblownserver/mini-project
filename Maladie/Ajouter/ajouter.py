@@ -37,7 +37,7 @@ class MAjouterPage(QWidget):
             msg = MessageBox("Erreur 404: utilisateur introvable","Veuillez verifier la CIN","error")
             msg.exec_()
         elif(cin in self.cinM.keys() and nomMaladie in self.cinM[cin]):
-            msg = MessageBox(f"Erreur de redondance","Le patient ayant {cin} souffre déjà de la maladie {nomMaladie}","error")
+            msg = MessageBox("Erreur de redondance",f"Le patient ayant {cin} souffre déjà de la maladie {nomMaladie}","error")
             msg.exec_()
         else:
             maladies.append({

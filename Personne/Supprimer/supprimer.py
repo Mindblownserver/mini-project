@@ -44,6 +44,7 @@ class SupprimerPage(QWidget):
         msg =MessageBox("Voulez vous vraiment supprimer {} {}".format(personnes[index]["Prenom"],personnes[index]["Nom"]),"","critique")
         msg.buttonClicked.connect(lambda btn: self.popupBtn(btn,index,personnes,maladies))
         msg.exec_() 
+        self.goHome()
     def popupBtn(self,btn,index,personnes,maladies):
         print(btn.text())
         if btn.text()[1:] == "Yes":

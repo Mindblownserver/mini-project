@@ -32,7 +32,8 @@ class MSupprimerPage(QWidget):
     def delete(self,maladies):
         msg = MessageBox("Êtes vous sûre de l'opèration?"," ","critique")
         msg.buttonClicked.connect(lambda btn: self.popupBtn(btn,maladies))
-        msg.exec_() 
+        msg.exec_()
+        self.goHome() 
     def popupBtn(self,btn,maladies):
         item = self.listeOp.currentItem()
         if btn.text()[1:] == "Yes":

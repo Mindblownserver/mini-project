@@ -48,9 +48,10 @@ class SupprimerToutPage(QWidget):
             # self.lCIN.append(personne["CIN"])
 
     def deleteCr(self,personnes,maladies):
-        msg = MessageBox("Êtes vous sûre de l'opèration?","Tu vas perdre les données des personnes ayant cette critère pour toujours ","critique")
+        msg = MessageBox("Voulez vous supprimer ces personnes ?","","critique")
         msg.buttonClicked.connect(lambda btn: self.popupBtn(btn,personnes,maladies))
         msg.exec_() 
+        self.goHome()
 
     def popupBtn(self,btn,personnes,maladies):
         item = self.listeOp.currentItem()
