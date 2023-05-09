@@ -46,10 +46,13 @@ class AfficherWindow(QWidget):
         if(self.cr=="Tout"):
             self.critere.hide()
         elif(self.cr=="indi"):
-            self.msg.setMaxLength(2)
+            self.msgTel.setMaximum(99)
+            self.msg.hide()
             self.cr="Tel"
         elif(self.cr == "Tel"):
-            self.msg.setInputMask("99 999 999")
+            self.msg.hide()
+        else:
+            self.msgTel.hide()
         self.text.setText(msg)
     
     def lenPersonne(self,personnes,st):
@@ -57,8 +60,9 @@ class AfficherWindow(QWidget):
         return (len([0 for personne in personnes if personne["Decede"] == st]))
     
     def rechercheClassic(self,personnes):
-        text = self.msg.text()
+        text = self.msg.text() if(self.cr!="Tel") else str(self.msgTel.value())
         personneCherche= list(dict())
+        if(text=="0"):return personnes
         for personne in personnes:
             if (text.lower() in personne[self.cr].lower()):
                 personneCherche.append(personne)          

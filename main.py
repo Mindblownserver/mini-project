@@ -31,7 +31,6 @@ class MainWindow(QMainWindow):
         path = os.path.dirname(__file__) + "/"
         ui_file = path+"GUI.ui"
         loadUi(ui_file, self)
-        self.cmp = 0
         self.personnes = list(dict())
         self.maladies=list(dict())
         self.nomMaladies = set()
@@ -95,9 +94,7 @@ class MainWindow(QMainWindow):
         self.openPage(self.Modifier)
     
     def openAjouter(self):
-        self.Ajouter = AjouterPage(self.personnes,self.cmp)
-        self.cmp+=1
-        print(self.cmp)
+        self.Ajouter = AjouterPage(self.personnes)
         self.openPage(self.Ajouter)
 
     def openMaladie(self,msg):

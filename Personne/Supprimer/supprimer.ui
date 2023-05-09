@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font: 14pt &quot;URW Gothic&quot;;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QFrame" name="returnFr">
@@ -93,7 +96,7 @@
       </property>
       <property name="styleSheet">
        <string notr="true">color:rgb(28, 113, 216);
-font: 63 18pt &quot;URW Gothic&quot;;</string>
+font: 63 22pt &quot;URW Gothic&quot;;</string>
       </property>
       <property name="text">
        <string>Supprimer Personnes</string>
@@ -421,7 +424,7 @@ font: 63 18pt &quot;URW Gothic&quot;;</string>
              <rect>
               <x>10</x>
               <y>400</y>
-              <width>101</width>
+              <width>111</width>
               <height>41</height>
              </rect>
             </property>
@@ -439,6 +442,7 @@ padding:5px;
 color:white;
 width: 5em;
 height: 30px;
+	font: 14pt &quot;URW Gothic&quot;;
 
 }
 QPushButton:hover{

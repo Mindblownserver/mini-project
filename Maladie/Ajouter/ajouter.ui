@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">font: 25 15pt &quot;URW Bookman&quot;;
+   <string notr="true">font: 25 14pt &quot;URW Bookman&quot;;
 </string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -50,7 +50,7 @@
       <property name="font">
        <font>
         <family>URW Gothic</family>
-        <pointsize>18</pointsize>
+        <pointsize>22</pointsize>
         <weight>8</weight>
         <italic>false</italic>
         <bold>false</bold>
@@ -58,7 +58,7 @@
       </property>
       <property name="styleSheet">
        <string notr="true">color:rgb(28, 113, 216);
-font: 63 18pt &quot;URW Gothic&quot;;</string>
+font: 63 22pt &quot;URW Gothic&quot;;</string>
       </property>
       <property name="text">
        <string>Ajouter maladie</string>
@@ -211,7 +211,7 @@ color: rgb(36, 31, 49);
        <widget class="QComboBox" name="nMaladie">
         <property name="minimumSize">
          <size>
-          <width>185</width>
+          <width>179</width>
           <height>40</height>
          </size>
         </property>
@@ -280,7 +280,7 @@ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
        <widget class="QComboBox" name="CIN">
         <property name="minimumSize">
          <size>
-          <width>185</width>
+          <width>179</width>
           <height>40</height>
          </size>
         </property>
@@ -387,41 +387,6 @@ QPushButton:hover{
         </property>
         <property name="text">
          <string>Ajouter</string>
-        </property>
-        <property name="autoDefault">
-         <bool>false</bool>
-        </property>
-        <property name="flat">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item alignment="Qt::AlignLeft|Qt::AlignTop">
-       <widget class="QPushButton" name="generate">
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-background-color:rgb(28, 113, 216);
-border-color: rgb(28, 113, 216);
-border-style: solid;
-border-width: 2px;
-border-radius: 15px;
-padding:5px;
-color:white;
-width: 5em;
-height: 30px;
-
-}
-QPushButton:hover{
-	background-color:none;
-	color: rgb(28, 113, 216);
-
-}</string>
-        </property>
-        <property name="text">
-         <string>generate</string>
         </property>
         <property name="autoDefault">
          <bool>false</bool>

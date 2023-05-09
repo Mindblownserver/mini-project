@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font: 14pt &quot;URW Gothic&quot;;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QFrame" name="frame">
@@ -38,15 +41,15 @@
       <property name="geometry">
        <rect>
         <x>70</x>
-        <y>10</y>
-        <width>241</width>
+        <y>4</y>
+        <width>521</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>URW Gothic</family>
-        <pointsize>18</pointsize>
+        <pointsize>22</pointsize>
         <weight>8</weight>
         <italic>false</italic>
         <bold>false</bold>
@@ -54,7 +57,7 @@
       </property>
       <property name="styleSheet">
        <string notr="true">color:rgb(28, 113, 216);
-font: 63 18pt &quot;URW Gothic&quot;;</string>
+font: 63 22pt &quot;URW Gothic&quot;;</string>
       </property>
       <property name="text">
        <string>Supprimer maladie</string>
@@ -64,7 +67,7 @@ font: 63 18pt &quot;URW Gothic&quot;;</string>
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>6</y>
+        <y>0</y>
         <width>51</width>
         <height>41</height>
        </rect>

@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font: 14pt &quot;URW Gothic&quot;;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QFrame" name="returnFr">
@@ -31,9 +34,9 @@
      <widget class="QPushButton" name="returnBtn">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>5</x>
         <y>2</y>
-        <width>51</width>
+        <width>41</width>
         <height>41</height>
        </rect>
       </property>
@@ -75,6 +78,23 @@
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="text">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>11</y>
+        <width>922</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(28, 113, 216);
+font: 63 22pt &quot;URW Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Lorem Ipsum</string>
+      </property>
+     </widget>
     </widget>
    </item>
    <item>
@@ -91,23 +111,15 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QLabel" name="text">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>922</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color:rgb(28, 113, 216);
-font: 63 22pt &quot;URW Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Lorem Ipsum</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>
@@ -140,6 +152,12 @@ font: 63 22pt &quot;URW Gothic&quot;;</string>
       </item>
       <item alignment="Qt::AlignLeft">
        <widget class="QPushButton" name="rechercheBtn">
+        <property name="minimumSize">
+         <size>
+          <width>140</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="cursor">
          <cursorShape>PointingHandCursor</cursorShape>
         </property>

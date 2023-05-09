@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>827</width>
+    <width>816</width>
     <height>669</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">font: 14pt &quot;URW Gothic&quot;;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -37,7 +40,7 @@
      <widget class="QPushButton" name="returnBtn">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>-4</x>
         <y>0</y>
         <width>51</width>
         <height>41</height>
@@ -85,16 +88,16 @@
      <widget class="QLabel" name="msg">
       <property name="geometry">
        <rect>
-        <x>60</x>
+        <x>46</x>
         <y>10</y>
         <width>1118</width>
-        <height>31</height>
+        <height>30</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>URW Gothic</family>
-        <pointsize>19</pointsize>
+        <pointsize>22</pointsize>
         <weight>8</weight>
         <italic>false</italic>
         <bold>false</bold>
@@ -102,7 +105,7 @@
       </property>
       <property name="styleSheet">
        <string notr="true">color:rgb(28, 113, 216);
-font: 63 19pt &quot;URW Gothic&quot;;</string>
+font: 63 22pt &quot;URW Gothic&quot;;</string>
       </property>
       <property name="text">
        <string>Afficher Maladies par personnes</string>

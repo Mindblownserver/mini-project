@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">font: 14pt &quot;URW Gothic&quot;;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_7">
    <item>
@@ -56,7 +56,7 @@
          <property name="geometry">
           <rect>
            <x>-10</x>
-           <y>0</y>
+           <y>-4</y>
            <width>51</width>
            <height>54</height>
           </rect>
@@ -112,7 +112,7 @@
          <property name="font">
           <font>
            <family>URW Gothic</family>
-           <pointsize>18</pointsize>
+           <pointsize>22</pointsize>
            <weight>8</weight>
            <italic>false</italic>
            <bold>false</bold>
@@ -120,7 +120,7 @@
          </property>
          <property name="styleSheet">
           <string notr="true">color:rgb(28, 113, 216);
-font: 63 18pt &quot;URW Gothic&quot;;</string>
+font: 63 22pt &quot;URW Gothic&quot;;</string>
          </property>
          <property name="text">
           <string>Modifier personne</string>
@@ -168,6 +168,9 @@ font: 63 18pt &quot;URW Gothic&quot;;</string>
          <font>
           <family>URW Gothic</family>
           <pointsize>14</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -179,7 +182,7 @@ font: 63 18pt &quot;URW Gothic&quot;;</string>
        <widget class="QComboBox" name="CIN">
         <property name="minimumSize">
          <size>
-          <width>125</width>
+          <width>143</width>
           <height>40</height>
          </size>
         </property>
@@ -268,6 +271,9 @@ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
          <font>
           <family>URW Gothic</family>
           <pointsize>14</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -279,7 +285,7 @@ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
        <widget class="QComboBox" name="maladie">
         <property name="minimumSize">
          <size>
-          <width>125</width>
+          <width>143</width>
           <height>40</height>
          </size>
         </property>
@@ -365,6 +371,9 @@ QComboBox::down-arrow:on { /* shift the arrow when popup is open */
          <font>
           <family>URW Gothic</family>
           <pointsize>14</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
          </font>
         </property>
         <property name="text">
@@ -420,9 +429,15 @@ color: rgb(36, 31, 49);
        <rect>
         <x>10</x>
         <y>28</y>
-        <width>99</width>
+        <width>140</width>
         <height>44</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>140</width>
+        <height>0</height>
+       </size>
       </property>
       <property name="cursor">
        <cursorShape>PointingHandCursor</cursorShape>

@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">font: 12pt &quot;URW Gothic&quot;;</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -78,6 +78,23 @@
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="text">
+      <property name="geometry">
+       <rect>
+        <x>68</x>
+        <y>12</y>
+        <width>1121</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:rgb(28, 113, 216);
+font: 63 22pt &quot;URW Gothic&quot;;</string>
+      </property>
+      <property name="text">
+       <string>Lorem Ipsum</string>
+      </property>
+     </widget>
     </widget>
    </item>
    <item>
@@ -94,23 +111,15 @@
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
      </property>
-     <widget class="QLabel" name="text">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>922</width>
-        <height>30</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color:rgb(28, 113, 216);
-font: 63 22pt &quot;URW Gothic&quot;;</string>
-      </property>
-      <property name="text">
-       <string>Lorem Ipsum</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="Line" name="line">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>
@@ -135,9 +144,49 @@ font: 63 22pt &quot;URW Gothic&quot;;</string>
        <widget class="QLineEdit" name="msg">
         <property name="minimumSize">
          <size>
-          <width>0</width>
+          <width>125</width>
           <height>36</height>
          </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">    border: 1px solid rgb(46, 194, 126);
+    border-radius: 10px;
+    padding: 1px 18px 1px 3px;
+    min-width: 6em;</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QSpinBox" name="msgTel">
+        <property name="minimumSize">
+         <size>
+          <width>125</width>
+          <height>36</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">    border: 1px solid rgb(46, 194, 126);
+    border-radius: 10px;
+    padding: 1px 18px 1px 3px;
+    min-width: 6em;</string>
+        </property>
+        <property name="buttonSymbols">
+         <enum>QAbstractSpinBox::NoButtons</enum>
+        </property>
+        <property name="correctionMode">
+         <enum>QAbstractSpinBox::CorrectToNearestValue</enum>
+        </property>
+        <property name="minimum">
+         <number>0</number>
+        </property>
+        <property name="maximum">
+         <number>99999999</number>
+        </property>
+        <property name="value">
+         <number>86568451</number>
+        </property>
+        <property name="displayIntegerBase">
+         <number>10</number>
         </property>
        </widget>
       </item>
@@ -233,7 +282,7 @@ QTableWidget::indicator:unchecked {
          <bool>false</bool>
         </attribute>
         <attribute name="horizontalHeaderDefaultSectionSize">
-         <number>115</number>
+         <number>125</number>
         </attribute>
         <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
          <bool>true</bool>

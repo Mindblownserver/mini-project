@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font: 14pt &quot;URW Gothic&quot;;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QFrame" name="returnFr">
@@ -86,7 +89,7 @@
       <property name="geometry">
        <rect>
         <x>60</x>
-        <y>10</y>
+        <y>9</y>
         <width>1118</width>
         <height>31</height>
        </rect>
@@ -94,7 +97,7 @@
       <property name="font">
        <font>
         <family>URW Gothic</family>
-        <pointsize>19</pointsize>
+        <pointsize>22</pointsize>
         <weight>8</weight>
         <italic>false</italic>
         <bold>false</bold>
@@ -102,7 +105,7 @@
       </property>
       <property name="styleSheet">
        <string notr="true">color:rgb(28, 113, 216);
-font: 63 19pt &quot;URW Gothic&quot;;</string>
+font: 63 22pt &quot;URW Gothic&quot;;</string>
       </property>
       <property name="text">
        <string> Supprimer Personnes d'</string>

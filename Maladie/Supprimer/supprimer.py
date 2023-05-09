@@ -40,6 +40,11 @@ class MSupprimerPage(QWidget):
             self.list.clear()
             #print(item.text()) => nom de la maladie
             #delete from Maladies
-            for i in range(len(maladies)):
+            i=0
+            while (i!=-1 and i<len(maladies)):
+                print("out:",i)
                 if maladies[i]["Maladie"] == item.text():
+                    print("in:",i)
                     del maladies[i]
+                    i=-1
+                i+=1

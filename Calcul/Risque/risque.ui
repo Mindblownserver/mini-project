@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">font: 14pt &quot;URW Gothic&quot;;</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QFrame" name="frame_6">
@@ -105,14 +108,14 @@
           <widget class="QLabel" name="titre_2">
            <property name="maximumSize">
             <size>
-             <width>254</width>
+             <width>308</width>
              <height>16777215</height>
             </size>
            </property>
            <property name="font">
             <font>
              <family>URW Gothic</family>
-             <pointsize>18</pointsize>
+             <pointsize>22</pointsize>
              <weight>8</weight>
              <italic>false</italic>
              <bold>false</bold>
@@ -120,7 +123,7 @@
            </property>
            <property name="styleSheet">
             <string notr="true">color:rgb(28, 113, 216);
-font: 63 18pt &quot;URW Gothic&quot;;</string>
+font: 63 22pt &quot;URW Gothic&quot;;</string>
            </property>
            <property name="text">
             <string>Afficher les personnes</string>
@@ -132,7 +135,7 @@ font: 63 18pt &quot;URW Gothic&quot;;</string>
            <property name="font">
             <font>
              <family>URW Gothic</family>
-             <pointsize>18</pointsize>
+             <pointsize>22</pointsize>
              <weight>8</weight>
              <italic>false</italic>
              <bold>false</bold>
@@ -140,7 +143,7 @@ font: 63 18pt &quot;URW Gothic&quot;;</string>
            </property>
            <property name="styleSheet">
             <string notr="true">color:rgb(192, 28, 40);
-font: 63 18pt &quot;URW Gothic&quot;;</string>
+font: 63 22pt &quot;URW Gothic&quot;;</string>
            </property>
            <property name="text">
             <string>à risque</string>
@@ -163,7 +166,7 @@ font: 63 18pt &quot;URW Gothic&quot;;</string>
    <item>
     <widget class="QFrame" name="frame">
      <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
+      <enum>QFrame::NoFrame</enum>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
@@ -365,7 +368,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
               <property name="font">
                <font>
                 <family>URW Gothic</family>
-                <pointsize>12</pointsize>
+                <pointsize>14</pointsize>
                 <weight>50</weight>
                 <italic>false</italic>
                 <bold>false</bold>
@@ -376,7 +379,7 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
 background-color: rgb(3, 7, 54);
 color: rgb(246, 246, 255);
 border-radius:140px;
-font: 12pt &quot;URW Gothic&quot;;
+font: 14pt &quot;URW Gothic&quot;;
 }</string>
               </property>
               <property name="frameShape">
@@ -452,10 +455,10 @@ font: 12pt &quot;URW Gothic&quot;;
                        </property>
                        <property name="styleSheet">
                         <string notr="true">color: rgb(246, 245, 244);
-font: 15pt &quot;URW Gothic&quot;;</string>
+font: 18pt &quot;URW Gothic&quot;;</string>
                        </property>
                        <property name="text">
-                        <string>123%</string>
+                        <string/>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignCenter</set>
@@ -470,6 +473,15 @@ font: 15pt &quot;URW Gothic&quot;;</string>
                         <width>0</width>
                         <height>30</height>
                        </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>URW Gothic</family>
+                        <pointsize>14</pointsize>
+                        <weight>50</weight>
+                        <italic>false</italic>
+                        <bold>false</bold>
+                       </font>
                       </property>
                       <property name="text">
                        <string>Pourcentage du risque</string>
